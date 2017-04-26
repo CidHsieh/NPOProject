@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ocd-RT-zz3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notif View Controller-->
+        <scene sceneID="D4E-Vv-uuC">
+            <objects>
+                <viewController id="3Tu-Cp-BGK" customClass="NotifViewController" customModule="NPOProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tnc-rK-sIP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yge-O1-Nqq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yeg-Kt-MVu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C8E-wG-hYc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwh-YU-AzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="90.404797601199405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1cq-9C-PKb">
+            <objects>
+                <navigationController storyboardIdentifier="Notif" automaticallyAdjustsScrollViewInsets="NO" id="ocd-RT-zz3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="GAF-Ig-6KY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pab-Ef-3Ds">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Tu-Cp-BGK" kind="relationship" relationship="rootViewController" id="LQS-ot-aFd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xC3-cP-V3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.8" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>
