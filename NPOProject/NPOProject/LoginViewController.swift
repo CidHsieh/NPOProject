@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func LoginButton(_ sender: UIButton) {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
+            if let error = error {
+                print("error login: \(error.localizedDescription)")
+            }else{
+                guard let token = FBSDKAccessToken.current() else {
+                    print("falid to get token")
+                    
+                    return
+                }
+                if let tokenString = token.tokenString {
+                    print(tokenString)
+                }
+                print("**************Login ok******************")
+                let request = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields":"id, name, email"])
+                let _ = request?.start(completionHandler: {
+                    (connection:FBSDKGraphRequestConnection?, result:Any?, error:Error?) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
+                    if let okResult = result as? [String:String] {
+                        print(okResult)
+                    }
+                })
+            }
+        }
     }
-    */
-
 }

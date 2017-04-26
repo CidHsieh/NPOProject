@@ -85,10 +85,10 @@
 			children = (
 				847E15DB1EB045520028C6C5 /* AppDelegate.swift */,
 				847E15F31EB046CF0028C6C5 /* Main */,
-				847E15F71EB04B770028C6C5 /* Login */,
 				847E15F81EB04B920028C6C5 /* Notif */,
-				847E15E21EB045520028C6C5 /* Assets.xcassets */,
+				847E15F71EB04B770028C6C5 /* Login */,
 				847E15E41EB045520028C6C5 /* LaunchScreen.storyboard */,
+				847E15E21EB045520028C6C5 /* Assets.xcassets */,
 				847E15E71EB045520028C6C5 /* Info.plist */,
 			);
 			path = NPOProject;
