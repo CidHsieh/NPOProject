@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
         //改登入按鈕外觀圓角
         loginButtonOutlet.layer.cornerRadius = 5
         loginButtonOutlet.clipsToBounds = true
+        navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
+        navigationItem.title = "呆丸眉角"
     }
     
     @IBAction func loginButtonDidPressed(_ sender: UIButton) {

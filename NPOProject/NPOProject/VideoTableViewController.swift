@@ -11,11 +11,13 @@ import UIKit
 class VideoTableViewController: UITableViewController {
     
     var video:[TKSotryVideo] = [
-        TKSotryVideo(title: "台客劇場》我在愛心尾牙認識的阿伯", code: "Bg0AxtZ334c"),TKSotryVideo(title: "台客劇場》給外籍看護的母親節禮物", code: "3DO343LGnE4"),TKSotryVideo(title: "台客劇場》進階淨灘", code: "esSaxV9FiFg"),TKSotryVideo(title: "台客劇場》網友淨灘出擊！謝謝大家這麼愛台灣", code: "9oVDIMEXTFk")
+        TKSotryVideo(title: "台客劇場》我在愛心尾牙認識的阿伯", code: "Bg0AxtZ334c"),TKSotryVideo(title: "台客劇場》給外籍看護的母親節禮物", code: "3DO343LGnE4"),TKSotryVideo(title: "台客劇場》進階淨灘", code: "esSaxV9FiFg"),TKSotryVideo(title: "台客劇場》網友淨灘出擊！謝謝大家這麼愛台灣", code: "9oVDIMEXTFk"),TKSotryVideo(title: "台客劇場》我當街友的那一晚", code: "bj-Rr3m3Ftg")
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
+        navigationItem.title = "台客劇場"
     }
 
 

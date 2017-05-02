@@ -12,6 +12,8 @@ class NotifViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
+        navigationItem.title = "呆丸眉角"
 
     }
 

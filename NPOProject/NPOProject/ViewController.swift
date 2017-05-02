@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         stickeyLayout.firstItemTransform = kFirstItemTransform
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
-        navigationItem.title = "故事牆"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.title = "呆丸眉角"
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     }
 }
@@ -68,8 +68,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        pushViewController.imageArray = photoArray
+        let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+        pushViewController.index = "\(indexPath.row)"
+        let stor = Story()
+        pushViewController.tempText = stor.story[indexPath.row]
         self.navigationController?.pushViewController(pushViewController, animated: true)
     }
 }

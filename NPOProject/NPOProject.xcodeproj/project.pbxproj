@@ -12,6 +12,14 @@
 		846FC6D61EB72192008C5C91 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */; };
 		846FC6D81EB721F2008C5C91 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */; };
 		846FC6DA1EB723A8008C5C91 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D91EB723A8008C5C91 /* VideoModel.swift */; };
+		846FC6DC1EB81A25008C5C91 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6DB1EB81A25008C5C91 /* SigninViewController.swift */; };
+		846FC6DE1EB82240008C5C91 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6DD1EB82240008C5C91 /* Story.swift */; };
+		846FC6E11EB845BD008C5C91 /* Donate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846FC6E01EB845BD008C5C91 /* Donate.storyboard */; };
+		846FC6E31EB84683008C5C91 /* DonateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6E21EB84683008C5C91 /* DonateTableViewController.swift */; };
+		846FC6E71EB85312008C5C91 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6E61EB85312008C5C91 /* DetailTableViewController.swift */; };
+		846FC6EB1EB8591A008C5C91 /* AboutUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EA1EB8591A008C5C91 /* AboutUsTableViewController.swift */; };
+		846FC6ED1EB85A2F008C5C91 /* AboutUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EC1EB85A2F008C5C91 /* AboutUsTableViewCell.swift */; };
+		846FC6EF1EB8620C008C5C91 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EE1EB8620C008C5C91 /* About.swift */; };
 		847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15DB1EB045520028C6C5 /* AppDelegate.swift */; };
 		847E15E11EB045520028C6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15DF1EB045520028C6C5 /* Main.storyboard */; };
 		847E15E31EB045520028C6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847E15E21EB045520028C6C5 /* Assets.xcassets */; };
@@ -19,13 +27,11 @@
 		847E15F01EB0458B0028C6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15ED1EB0458B0028C6C5 /* ViewController.swift */; };
 		847E15F11EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15EE1EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift */; };
 		847E15F21EB0458B0028C6C5 /* PrimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15EF1EB0458B0028C6C5 /* PrimerCell.swift */; };
-		847E15F61EB04AE30028C6C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15F51EB04AE30028C6C5 /* DetailViewController.swift */; };
 		847E15FA1EB04BB30028C6C5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15F91EB04BB30028C6C5 /* Login.storyboard */; };
 		847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FB1EB04CAC0028C6C5 /* LoginViewController.swift */; };
 		847E15FE1EB04CD20028C6C5 /* Notif.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15FD1EB04CD20028C6C5 /* Notif.storyboard */; };
 		847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */; };
 		847E16021EB21C290028C6C5 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */; };
-		847E16041EB2620D0028C6C5 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,14 @@
 		846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		846FC6D91EB723A8008C5C91 /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		846FC6DB1EB81A25008C5C91 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		846FC6DD1EB82240008C5C91 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		846FC6E01EB845BD008C5C91 /* Donate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Donate.storyboard; sourceTree = "<group>"; };
+		846FC6E21EB84683008C5C91 /* DonateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateTableViewController.swift; sourceTree = "<group>"; };
+		846FC6E61EB85312008C5C91 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		846FC6EA1EB8591A008C5C91 /* AboutUsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewController.swift; sourceTree = "<group>"; };
+		846FC6EC1EB85A2F008C5C91 /* AboutUsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewCell.swift; sourceTree = "<group>"; };
+		846FC6EE1EB8620C008C5C91 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		847E15D81EB045520028C6C5 /* NPOProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPOProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847E15DB1EB045520028C6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847E15E01EB045520028C6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,13 +58,11 @@
 		847E15ED1EB0458B0028C6C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		847E15EE1EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		847E15EF1EB0458B0028C6C5 /* PrimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimerCell.swift; sourceTree = "<group>"; };
-		847E15F51EB04AE30028C6C5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		847E15F91EB04BB30028C6C5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		847E15FB1EB04CAC0028C6C5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		847E15FD1EB04CD20028C6C5 /* Notif.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notif.storyboard; sourceTree = "<group>"; };
 		847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifViewController.swift; sourceTree = "<group>"; };
 		847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOProject/Pods-NPOProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +97,15 @@
 			name = Video;
 			sourceTree = "<group>";
 		};
+		846FC6DF1EB84593008C5C91 /* Donate */ = {
+			isa = PBXGroup;
+			children = (
+				846FC6E01EB845BD008C5C91 /* Donate.storyboard */,
+				846FC6E21EB84683008C5C91 /* DonateTableViewController.swift */,
+			);
+			name = Donate;
+			sourceTree = "<group>";
+		};
 		847E15CF1EB045520028C6C5 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +129,7 @@
 			children = (
 				847E15DB1EB045520028C6C5 /* AppDelegate.swift */,
 				847E15F31EB046CF0028C6C5 /* Main */,
+				846FC6DF1EB84593008C5C91 /* Donate */,
 				846FC6D01EB70E7D008C5C91 /* Video */,
 				847E15F81EB04B920028C6C5 /* Notif */,
 				847E15F71EB04B770028C6C5 /* Login */,
@@ -125,9 +147,9 @@
 				847E15ED1EB0458B0028C6C5 /* ViewController.swift */,
 				847E15EE1EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift */,
 				847E15EF1EB0458B0028C6C5 /* PrimerCell.swift */,
-				847E15F51EB04AE30028C6C5 /* DetailViewController.swift */,
 				847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */,
-				847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */,
+				846FC6E61EB85312008C5C91 /* DetailTableViewController.swift */,
+				846FC6DD1EB82240008C5C91 /* Story.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -137,6 +159,7 @@
 			children = (
 				847E15F91EB04BB30028C6C5 /* Login.storyboard */,
 				847E15FB1EB04CAC0028C6C5 /* LoginViewController.swift */,
+				846FC6DB1EB81A25008C5C91 /* SigninViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -146,6 +169,9 @@
 			children = (
 				847E15FD1EB04CD20028C6C5 /* Notif.storyboard */,
 				847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */,
+				846FC6EA1EB8591A008C5C91 /* AboutUsTableViewController.swift */,
+				846FC6EC1EB85A2F008C5C91 /* AboutUsTableViewCell.swift */,
+				846FC6EE1EB8620C008C5C91 /* About.swift */,
 			);
 			name = Notif;
 			sourceTree = "<group>";
@@ -222,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FC6E11EB845BD008C5C91 /* Donate.storyboard in Resources */,
 				847E15FA1EB04BB30028C6C5 /* Login.storyboard in Resources */,
 				847E15E61EB045520028C6C5 /* LaunchScreen.storyboard in Resources */,
 				846FC6D21EB70E94008C5C91 /* Video.storyboard in Resources */,
@@ -289,14 +316,19 @@
 				846FC6D81EB721F2008C5C91 /* VideoTableViewController.swift in Sources */,
 				847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */,
 				847E15F01EB0458B0028C6C5 /* ViewController.swift in Sources */,
+				846FC6DC1EB81A25008C5C91 /* SigninViewController.swift in Sources */,
 				847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */,
+				846FC6E31EB84683008C5C91 /* DonateTableViewController.swift in Sources */,
+				846FC6E71EB85312008C5C91 /* DetailTableViewController.swift in Sources */,
 				846FC6D61EB72192008C5C91 /* VideoTableViewCell.swift in Sources */,
-				847E16041EB2620D0028C6C5 /* DetailTableViewController.swift in Sources */,
+				846FC6DE1EB82240008C5C91 /* Story.swift in Sources */,
 				847E16021EB21C290028C6C5 /* DetailCollectionViewCell.swift in Sources */,
 				846FC6DA1EB723A8008C5C91 /* VideoModel.swift in Sources */,
-				847E15F61EB04AE30028C6C5 /* DetailViewController.swift in Sources */,
+				846FC6ED1EB85A2F008C5C91 /* AboutUsTableViewCell.swift in Sources */,
 				847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */,
 				847E15F21EB0458B0028C6C5 /* PrimerCell.swift in Sources */,
+				846FC6EB1EB8591A008C5C91 /* AboutUsTableViewController.swift in Sources */,
+				846FC6EF1EB8620C008C5C91 /* About.swift in Sources */,
 				847E15F11EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

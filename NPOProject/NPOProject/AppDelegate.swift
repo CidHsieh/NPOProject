@@ -32,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let blueController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
 //        navController?.pushViewController(blueController, animated: false)
         
+       
+        
+        //將statusbar顏色改為白色
+        UINavigationBar.appearance().barStyle = .blackOpaque
+        
+        
         return true
     }
     
