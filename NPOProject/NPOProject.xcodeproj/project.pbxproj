@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2A1F8CA86412DF2F29D643DB /* Pods_NPOProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385A080D9B78CE525E69D596 /* Pods_NPOProject.framework */; };
+		846FC6D21EB70E94008C5C91 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846FC6D11EB70E94008C5C91 /* Video.storyboard */; };
+		846FC6D61EB72192008C5C91 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */; };
+		846FC6D81EB721F2008C5C91 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */; };
+		846FC6DA1EB723A8008C5C91 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6D91EB723A8008C5C91 /* VideoModel.swift */; };
 		847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15DB1EB045520028C6C5 /* AppDelegate.swift */; };
 		847E15E11EB045520028C6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15DF1EB045520028C6C5 /* Main.storyboard */; };
 		847E15E31EB045520028C6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847E15E21EB045520028C6C5 /* Assets.xcassets */; };
@@ -20,11 +24,17 @@
 		847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FB1EB04CAC0028C6C5 /* LoginViewController.swift */; };
 		847E15FE1EB04CD20028C6C5 /* Notif.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15FD1EB04CD20028C6C5 /* Notif.storyboard */; };
 		847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */; };
+		847E16021EB21C290028C6C5 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */; };
+		847E16041EB2620D0028C6C5 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F357E38559EC85239B7CCE0 /* Pods-NPOProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPOProject/Pods-NPOProject.release.xcconfig"; sourceTree = "<group>"; };
 		385A080D9B78CE525E69D596 /* Pods_NPOProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NPOProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846FC6D11EB70E94008C5C91 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		846FC6D91EB723A8008C5C91 /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		847E15D81EB045520028C6C5 /* NPOProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPOProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847E15DB1EB045520028C6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847E15E01EB045520028C6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +49,8 @@
 		847E15FB1EB04CAC0028C6C5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		847E15FD1EB04CD20028C6C5 /* Notif.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notif.storyboard; sourceTree = "<group>"; };
 		847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifViewController.swift; sourceTree = "<group>"; };
+		847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOProject/Pods-NPOProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +72,17 @@
 				385A080D9B78CE525E69D596 /* Pods_NPOProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		846FC6D01EB70E7D008C5C91 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				846FC6D11EB70E94008C5C91 /* Video.storyboard */,
+				846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */,
+				846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */,
+				846FC6D91EB723A8008C5C91 /* VideoModel.swift */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		847E15CF1EB045520028C6C5 = {
@@ -85,6 +108,7 @@
 			children = (
 				847E15DB1EB045520028C6C5 /* AppDelegate.swift */,
 				847E15F31EB046CF0028C6C5 /* Main */,
+				846FC6D01EB70E7D008C5C91 /* Video */,
 				847E15F81EB04B920028C6C5 /* Notif */,
 				847E15F71EB04B770028C6C5 /* Login */,
 				847E15E41EB045520028C6C5 /* LaunchScreen.storyboard */,
@@ -99,9 +123,11 @@
 			children = (
 				847E15DF1EB045520028C6C5 /* Main.storyboard */,
 				847E15ED1EB0458B0028C6C5 /* ViewController.swift */,
-				847E15F51EB04AE30028C6C5 /* DetailViewController.swift */,
 				847E15EE1EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift */,
 				847E15EF1EB0458B0028C6C5 /* PrimerCell.swift */,
+				847E15F51EB04AE30028C6C5 /* DetailViewController.swift */,
+				847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */,
+				847E16031EB2620D0028C6C5 /* DetailTableViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -198,6 +224,7 @@
 			files = (
 				847E15FA1EB04BB30028C6C5 /* Login.storyboard in Resources */,
 				847E15E61EB045520028C6C5 /* LaunchScreen.storyboard in Resources */,
+				846FC6D21EB70E94008C5C91 /* Video.storyboard in Resources */,
 				847E15FE1EB04CD20028C6C5 /* Notif.storyboard in Resources */,
 				847E15E31EB045520028C6C5 /* Assets.xcassets in Resources */,
 				847E15E11EB045520028C6C5 /* Main.storyboard in Resources */,
@@ -259,9 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FC6D81EB721F2008C5C91 /* VideoTableViewController.swift in Sources */,
 				847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */,
 				847E15F01EB0458B0028C6C5 /* ViewController.swift in Sources */,
 				847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */,
+				846FC6D61EB72192008C5C91 /* VideoTableViewCell.swift in Sources */,
+				847E16041EB2620D0028C6C5 /* DetailTableViewController.swift in Sources */,
+				847E16021EB21C290028C6C5 /* DetailCollectionViewCell.swift in Sources */,
+				846FC6DA1EB723A8008C5C91 /* VideoModel.swift in Sources */,
 				847E15F61EB04AE30028C6C5 /* DetailViewController.swift in Sources */,
 				847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */,
 				847E15F21EB0458B0028C6C5 /* PrimerCell.swift in Sources */,

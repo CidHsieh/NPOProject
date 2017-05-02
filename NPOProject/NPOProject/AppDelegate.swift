@@ -19,10 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //FB SDK 由 Object-C 改寫
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.black
         if let barFont = UIFont(name: "Avenir-Light", size: 24) {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: barFont]
         }
+//        //帳密無誤，登入後跳轉畫面至故事牆
+//        let tabController = self.window?.rootViewController as! UITabBarController
+//        tabController.selectedIndex = 2
+//        let navController = tabController.selectedViewController as? UINavigationController
+//        navController?.popToRootViewController(animated: false)
+//        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+//        let blueController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+//        navController?.pushViewController(blueController, animated: false)
+        
         return true
     }
     

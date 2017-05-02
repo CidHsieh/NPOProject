@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="2084" y="90.404797601199405"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Notif-->
         <scene sceneID="1cq-9C-PKb">
             <objects>
                 <navigationController storyboardIdentifier="Notif" automaticallyAdjustsScrollViewInsets="NO" id="ocd-RT-zz3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="GAF-Ig-6KY"/>
+                    <tabBarItem key="tabBarItem" title="Notif" image="Push Notifications_000000_25" selectedImage="Push Notifications_000000_25" id="GAF-Ig-6KY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pab-Ef-3Ds">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -48,4 +48,7 @@
             <point key="canvasLocation" x="1144.8" y="89.505247376311857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Push Notifications_000000_25" width="25" height="25"/>
+    </resources>
 </document>

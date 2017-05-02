@@ -16,11 +16,11 @@ class ViewController: UIViewController {
     let kCellSizeCoef: CGFloat = 0.7
     let kFirstItemTransform: CGFloat = 0.09
     
-    let lessonsArray = ["Create a Hight Quality, High Ranking Search Ad",
-                        "Evolve Your Ad Campaigns with Programmatic Buying",
-                        "How Remarketing Keeps Customers Coming Back",
-                        "Surviving and Thriving on Social Media",
-                        "Keep Mobile Users Engaged In and Out of Your App"
+    let lessonsArray = ["這不只是一個阿嬤",
+                        "這不只是一個阿公",
+                        "這不只是一個阿公的故事喔",
+                        "這不只是一個阿公、阿嬤的故事喔",
+                        "這不只是一個阿嬤的物事喔"
                         ]
     let photoArray = ["0","1","2","3","4","5"]
 
@@ -29,8 +29,10 @@ class ViewController: UIViewController {
         
         let stickeyLayout = collectionView.collectionViewLayout as! StickyCollectionViewFlowLayout
         stickeyLayout.firstItemTransform = kFirstItemTransform
-        navigationController?.navigationBar.barTintColor = UIColor.yellow
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
         navigationItem.title = "故事牆"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     }
 }
@@ -66,7 +68,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
+        let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        pushViewController.imageArray = photoArray
         self.navigationController?.pushViewController(pushViewController, animated: true)
     }
 }
