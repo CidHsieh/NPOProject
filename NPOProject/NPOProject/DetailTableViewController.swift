@@ -14,14 +14,24 @@ class DetailTableViewController: UITableViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var tempTitle = ""
     var tempText = ""
     var index = ""
+    
+    
+    @IBAction func giveComment(_ sender: UIButton) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         descriptionLabel.text = tempText
         imageView.image = UIImage(named: "\(index)")
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
+        
+        navigationItem.title = tempTitle
         
         //移除tableview分隔線
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none

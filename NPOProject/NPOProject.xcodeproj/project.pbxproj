@@ -20,6 +20,11 @@
 		846FC6EB1EB8591A008C5C91 /* AboutUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EA1EB8591A008C5C91 /* AboutUsTableViewController.swift */; };
 		846FC6ED1EB85A2F008C5C91 /* AboutUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EC1EB85A2F008C5C91 /* AboutUsTableViewCell.swift */; };
 		846FC6EF1EB8620C008C5C91 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6EE1EB8620C008C5C91 /* About.swift */; };
+		846FC6F11EB87C12008C5C91 /* DonateDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6F01EB87C12008C5C91 /* DonateDetailTableViewController.swift */; };
+		846FC6F31EB87C72008C5C91 /* DonateDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6F21EB87C72008C5C91 /* DonateDetailTableViewCell.swift */; };
+		846FC6F51EB8D8CE008C5C91 /* StoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6F41EB8D8CE008C5C91 /* StoryTableViewController.swift */; };
+		846FC6F71EB8DD58008C5C91 /* StoryOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6F61EB8DD58008C5C91 /* StoryOneTableViewCell.swift */; };
+		846FC6F91EB8DD66008C5C91 /* StoryTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC6F81EB8DD66008C5C91 /* StoryTwoTableViewCell.swift */; };
 		847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15DB1EB045520028C6C5 /* AppDelegate.swift */; };
 		847E15E11EB045520028C6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847E15DF1EB045520028C6C5 /* Main.storyboard */; };
 		847E15E31EB045520028C6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847E15E21EB045520028C6C5 /* Assets.xcassets */; };
@@ -49,6 +54,11 @@
 		846FC6EA1EB8591A008C5C91 /* AboutUsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewController.swift; sourceTree = "<group>"; };
 		846FC6EC1EB85A2F008C5C91 /* AboutUsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewCell.swift; sourceTree = "<group>"; };
 		846FC6EE1EB8620C008C5C91 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		846FC6F01EB87C12008C5C91 /* DonateDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateDetailTableViewController.swift; sourceTree = "<group>"; };
+		846FC6F21EB87C72008C5C91 /* DonateDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateDetailTableViewCell.swift; sourceTree = "<group>"; };
+		846FC6F41EB8D8CE008C5C91 /* StoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewController.swift; sourceTree = "<group>"; };
+		846FC6F61EB8DD58008C5C91 /* StoryOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryOneTableViewCell.swift; sourceTree = "<group>"; };
+		846FC6F81EB8DD66008C5C91 /* StoryTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTwoTableViewCell.swift; sourceTree = "<group>"; };
 		847E15D81EB045520028C6C5 /* NPOProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPOProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847E15DB1EB045520028C6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847E15E01EB045520028C6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +112,8 @@
 			children = (
 				846FC6E01EB845BD008C5C91 /* Donate.storyboard */,
 				846FC6E21EB84683008C5C91 /* DonateTableViewController.swift */,
+				846FC6F01EB87C12008C5C91 /* DonateDetailTableViewController.swift */,
+				846FC6F21EB87C72008C5C91 /* DonateDetailTableViewCell.swift */,
 			);
 			name = Donate;
 			sourceTree = "<group>";
@@ -147,8 +159,11 @@
 				847E15ED1EB0458B0028C6C5 /* ViewController.swift */,
 				847E15EE1EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift */,
 				847E15EF1EB0458B0028C6C5 /* PrimerCell.swift */,
-				847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */,
 				846FC6E61EB85312008C5C91 /* DetailTableViewController.swift */,
+				847E16011EB21C290028C6C5 /* DetailCollectionViewCell.swift */,
+				846FC6F41EB8D8CE008C5C91 /* StoryTableViewController.swift */,
+				846FC6F61EB8DD58008C5C91 /* StoryOneTableViewCell.swift */,
+				846FC6F81EB8DD66008C5C91 /* StoryTwoTableViewCell.swift */,
 				846FC6DD1EB82240008C5C91 /* Story.swift */,
 			);
 			name = Main;
@@ -317,12 +332,16 @@
 				847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */,
 				847E15F01EB0458B0028C6C5 /* ViewController.swift in Sources */,
 				846FC6DC1EB81A25008C5C91 /* SigninViewController.swift in Sources */,
+				846FC6F71EB8DD58008C5C91 /* StoryOneTableViewCell.swift in Sources */,
 				847E15DC1EB045520028C6C5 /* AppDelegate.swift in Sources */,
+				846FC6F51EB8D8CE008C5C91 /* StoryTableViewController.swift in Sources */,
 				846FC6E31EB84683008C5C91 /* DonateTableViewController.swift in Sources */,
+				846FC6F91EB8DD66008C5C91 /* StoryTwoTableViewCell.swift in Sources */,
 				846FC6E71EB85312008C5C91 /* DetailTableViewController.swift in Sources */,
 				846FC6D61EB72192008C5C91 /* VideoTableViewCell.swift in Sources */,
 				846FC6DE1EB82240008C5C91 /* Story.swift in Sources */,
 				847E16021EB21C290028C6C5 /* DetailCollectionViewCell.swift in Sources */,
+				846FC6F31EB87C72008C5C91 /* DonateDetailTableViewCell.swift in Sources */,
 				846FC6DA1EB723A8008C5C91 /* VideoModel.swift in Sources */,
 				846FC6ED1EB85A2F008C5C91 /* AboutUsTableViewCell.swift in Sources */,
 				847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */,
@@ -330,6 +349,7 @@
 				846FC6EB1EB8591A008C5C91 /* AboutUsTableViewController.swift in Sources */,
 				846FC6EF1EB8620C008C5C91 /* About.swift in Sources */,
 				847E15F11EB0458B0028C6C5 /* StickyCollectionViewFlowLayout.swift in Sources */,
+				846FC6F11EB87C12008C5C91 /* DonateDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
