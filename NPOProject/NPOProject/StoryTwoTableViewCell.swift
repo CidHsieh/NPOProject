@@ -12,6 +12,7 @@ class StoryTwoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var videoTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

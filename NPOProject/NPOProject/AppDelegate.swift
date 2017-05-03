@@ -37,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //將statusbar顏色改為白色
         UINavigationBar.appearance().barStyle = .blackOpaque
         
+        //把tabBarController改顏色
+        let tabBarController = self.window?.rootViewController as! UITabBarController
+        tabBarController.tabBar.tintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
+        tabBarController.tabBar.unselectedItemTintColor = UIColor.gray
+        
+        
         
         return true
     }

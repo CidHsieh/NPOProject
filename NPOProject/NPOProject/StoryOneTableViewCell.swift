@@ -14,6 +14,16 @@ class StoryOneTableViewCell: UITableViewCell {
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var storySubTitle: UILabel!
 
+    var likeOrUnlike = Array(repeating: false, count: 5)
+    
+    @IBAction func likeButtonDidPressed(_ sender: UIButton) {
+        if sender.currentImage == UIImage(named: "unlike") {
+            sender.setImage(UIImage(named: "like"), for: .normal)
+        } else {
+            sender.setImage(UIImage(named: "unlike"), for: .normal)
+        }
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
     }

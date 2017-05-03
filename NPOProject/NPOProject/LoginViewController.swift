@@ -24,7 +24,28 @@ class LoginViewController: UIViewController {
         loginButtonOutlet.layer.cornerRadius = 5
         loginButtonOutlet.clipsToBounds = true
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
-        navigationItem.title = "呆丸眉角"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.title = "登入"
+        
+        //點擊空白處退出鍵盤
+        let touch = UITapGestureRecognizer(target: self, action: #selector(self.tap(gesture:)))
+        view.addGestureRecognizer(touch)        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //偵測鍵盤出現時改變view的高度
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    //鍵盤出現，view高度往上
+    func keyBoardWillShow(notification: NSNotification) {
+        //handle appearing of keyboard here
+        self.view.frame = CGRect(x: 0, y: -70, width: view.frame.width, height: view.frame.height)
+    }
+    //鍵盤退出，view高度往下
+    func keyBoardWillHide(notification: NSNotification) {
+        //handle dismiss of keyboard here
+        self.view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
     }
     
     @IBAction func loginButtonDidPressed(_ sender: UIButton) {
@@ -70,14 +91,15 @@ class LoginViewController: UIViewController {
         
         
     }
+//    
+//    @IBAction func logoutButton(_ sender: UIButton) {
+//        let fbLogoutManager = FBSDKLoginManager()
+//        fbLogoutManager.logOut()
+//        print("**************Logout ok******************")
+//        
+//        
+//    }
     
-    @IBAction func logoutButton(_ sender: UIButton) {
-        let fbLogoutManager = FBSDKLoginManager()
-        fbLogoutManager.logOut()
-        print("**************Logout ok******************")
-        
-        
-    }
     //用臉書帳號登入
     @IBAction func LoginButton(_ sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager()
@@ -115,26 +137,15 @@ class LoginViewController: UIViewController {
                             navController?.popToRootViewController(animated: true)
                         }
                     }
-                    
-                    //let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                    //let blueController = storyboard.instantiateViewController(withIdentifier: "ViewController")
-                    //navController?.pushViewController(blueController, animated: false)
-                    //navController?.popToRootViewController(animated: true)
-
-                    
-                    
-//                    let navigationController = self.tabBarController?.viewControllers?.first as? UINavigationController
-//                    if let viewController = navigationController?.viewControllers {
-//                        let firstViewController = viewController.first as! ViewController
-//                        
-//                        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-//                        let pushView = storyboard.instantiateViewController(withIdentifier: "ViewController")
-//                        firstViewController.navigationController?.pushViewController(pushView, animated: true)
-//                    }
-                    
                 })
-                
             }
         }
     }
+    
+    func tap(gesture: UITapGestureRecognizer) {
+        emailTextFiled.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
+    
 }

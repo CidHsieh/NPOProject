@@ -22,6 +22,8 @@ class StoryTableViewController: UITableViewController {
         TKSotryVideo(title: "台客劇場》我在愛心尾牙認識的阿伯", code: "Bg0AxtZ334c"),TKSotryVideo(title: "台客劇場》給外籍看護的母親節禮物", code: "3DO343LGnE4"),TKSotryVideo(title: "台客劇場》婚姻的黑箱秘密 Secrets and Amnesia", code: "EB10c6qNev4")
     ]
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
@@ -60,6 +62,9 @@ class StoryTableViewController: UITableViewController {
             return cell2
         }
     }
+    
+    // MARK: - Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -72,5 +77,5 @@ class StoryTableViewController: UITableViewController {
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
     }
-
+   
 }
