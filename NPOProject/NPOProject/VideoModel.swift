@@ -10,9 +10,11 @@ import Foundation
 
 class TKSotryVideo {
     var title = ""
+    var subTitle = ""
     var code = ""
-    init(title:String, code:String) {
+    init(title:String, subTitle: String, code:String) {
         self.title = title
+        self.subTitle = subTitle
         self.code = code
     }
 }

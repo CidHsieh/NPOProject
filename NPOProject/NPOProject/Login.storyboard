@@ -52,7 +52,7 @@
                                 <rect key="frame" x="112.33333333333331" y="345.33333333333326" width="190" height="38.666666666666686"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-2u-PpU">
                                 <rect key="frame" x="112.33333333333331" y="409" width="190" height="38.666666666666686"/>
@@ -66,7 +66,7 @@
                                     <action selector="loginButtonDidPressed:" destination="aFB-M1-6IU" eventType="touchUpInside" id="eTh-ft-mHd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@test.com" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuE-zo-bF5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="topkofaxion7671@gmail.com" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuE-zo-bF5">
                                 <rect key="frame" x="112.33333333333331" y="281.66666666666669" width="190" height="38.666666666666629"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

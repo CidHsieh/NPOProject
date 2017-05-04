@@ -51,7 +51,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonDidPressed(_ sender: UIButton) {
 //        let jsonString = "email=\(emailTextFiled.text!)&password=\(passwordTextField.text!)"
         // create post request
-        let url = URL(string: "http://172.104.45.242/api/v1/login?" + "email=\(emailTextFiled.text!)&password=\(passwordTextField.text!)")
+        
+        
+        let url = URL(string: "http://172.104.45.242/api/v1/login?" + "email=\(self.emailTextFiled.text!)&password=\(self.passwordTextField.text!)")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
@@ -64,41 +66,35 @@ class LoginViewController: UIViewController {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
+            
             if let result = String(data: data, encoding: .utf8) {
                 let token = result
-                if token.contains("email or password is not correct") != true {
-                    
-                    //帳密無誤，登入後跳轉畫面至故事牆
-                    let tabController = self.tabBarController
-                    tabController?.selectedIndex = 0
-                    let navController = tabController?.selectedViewController as? UINavigationController
-                    navController?.popToRootViewController(animated: true)
-                    
-                } else {
-                    //帳密錯誤
-                    let alertAction = UIAlertController(title: "帳號/密碼 輸入錯誤", message: "您輸入帳號或密碼不正確，請再輸入一次", preferredStyle: .alert)
-                    alertAction.addAction(UIAlertAction(title: "好", style: .default, handler: nil))
-                        self.present(alertAction, animated: true, completion: nil)
-                    print("帳密錯誤")
+                
+                //登入後要執行的動作要在主執行緒執行
+                DispatchQueue.main.async {
+                    if token.contains("email or password is not correct") != true {
+                        
+                            //帳密無誤，登入後跳轉畫面至故事牆
+                            let tabController = self.tabBarController
+                            tabController?.selectedIndex = 0
+                            let navController = tabController?.selectedViewController as? UINavigationController
+                            navController?.popToRootViewController(animated: true)
+                        
+                    } else {
+                        //帳密錯誤
+                        let alertAction = UIAlertController(title: "帳號/密碼 輸入錯誤", message: "您輸入帳號或密碼不正確，請再輸入一次", preferredStyle: .alert)
+                        alertAction.addAction(UIAlertAction(title: "好", style: .default, handler: nil))
+                            self.present(alertAction, animated: true, completion: nil)
+                        print("帳密錯誤")
+                    }
+                    print(token)
                 }
-                print(token)
             }
         }
         task.resume()
         
-        
-        print("\(emailTextFiled.text!), \(passwordTextField.text!)")
-        
-        
+        print("\(self.emailTextFiled.text!), \(self.passwordTextField.text!)")
     }
-//    
-//    @IBAction func logoutButton(_ sender: UIButton) {
-//        let fbLogoutManager = FBSDKLoginManager()
-//        fbLogoutManager.logOut()
-//        print("**************Logout ok******************")
-//        
-//        
-//    }
     
     //用臉書帳號登入
     @IBAction func LoginButton(_ sender: UIButton) {
@@ -146,6 +142,4 @@ class LoginViewController: UIViewController {
         emailTextFiled.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-    
-    
 }

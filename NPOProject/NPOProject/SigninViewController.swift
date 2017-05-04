@@ -49,8 +49,7 @@ class SigninViewController: UIViewController {
     func tap(gesture: UITapGestureRecognizer) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
-        confirmPassword.resignFirstResponder()
-        
+        confirmPassword.resignFirstResponder()        
     }
 
     
