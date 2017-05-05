@@ -18,6 +18,7 @@ class DetailTableViewController: UITableViewController {
     @IBOutlet weak var lookMessageButtonOutlet: UIButton!
     @IBOutlet weak var likeButtonOutlet: UIButton!
     
+    @IBOutlet weak var projectButtonOutlet: UIButton!
     var tempTitle = ""
     var tempText = ""
     var index = ""
@@ -40,6 +41,9 @@ class DetailTableViewController: UITableViewController {
         //移除tableview分隔線
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.estimatedRowHeight = 50
+        
+        projectButtonOutlet.layer.cornerRadius = 5
+        projectButtonOutlet.clipsToBounds = true
         
         like = UserDefaults.standard.bool(forKey: "like")
         if like {
@@ -96,6 +100,14 @@ class DetailTableViewController: UITableViewController {
         UserDefaults.standard.set(likeCount, forKey: "likeCount")
         UserDefaults.standard.set(like, forKey: "like")
         UserDefaults.standard.synchronize()
+    }
+    
+    
+    @IBAction func projectDonateButton(_ sender: UIButton) {
+        let tabController = self.tabBarController
+        tabController?.selectedIndex = 1
+        let navController = tabController?.selectedViewController as? UINavigationController
+        navController?.popToRootViewController(animated: true)
     }
     
     @IBAction func fbShareButton(_ sender: UIButton) {

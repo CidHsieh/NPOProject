@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         stickeyLayout.firstItemTransform = kFirstItemTransform
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
-        navigationItem.title = "眉角故事"
+        navigationItem.title = ""
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     }

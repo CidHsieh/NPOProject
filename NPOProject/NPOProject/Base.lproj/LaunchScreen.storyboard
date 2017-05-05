@@ -22,15 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" highlightedImage="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-xe-CJt">
-                                <rect key="frame" x="44" y="277" width="327" height="182"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaiwanMEGA" highlightedImage="TaiwanMEGA" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-xe-CJt">
+                                <rect key="frame" x="44" y="204.66666666666663" width="327" height="327"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uCm-xe-CJt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="327:414" id="LA7-f9-TUM"/>
                             <constraint firstItem="uCm-xe-CJt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gH5-39-9Up"/>
-                            <constraint firstItem="uCm-xe-CJt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="182:736" id="pHx-wk-oJ1"/>
+                            <constraint firstItem="uCm-xe-CJt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="327:736" id="pHx-wk-oJ1"/>
                             <constraint firstItem="uCm-xe-CJt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xsA-Ne-XDr"/>
                         </constraints>
                     </view>
@@ -41,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="1018" height="535"/>
+        <image name="TaiwanMEGA" width="1024" height="1024"/>
     </resources>
 </document>
