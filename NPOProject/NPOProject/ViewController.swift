@@ -86,6 +86,7 @@ extension ViewController: UICollectionViewDelegate {
             self.navigationController?.pushViewController(pushViewController, animated: true)
         }
     }
+    
 }
 
 

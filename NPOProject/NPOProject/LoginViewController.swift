@@ -74,11 +74,13 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     if token.contains("email or password is not correct") != true {
                         
-                            //帳密無誤，登入後跳轉畫面至故事牆
-                            let tabController = self.tabBarController
-                            tabController?.selectedIndex = 0
-                            let navController = tabController?.selectedViewController as? UINavigationController
-                            navController?.popToRootViewController(animated: true)
+                        //帳密無誤，登入後跳轉畫面至故事牆
+                        let tabController = self.tabBarController
+                        tabController?.selectedIndex = 0
+                        let navController = tabController?.selectedViewController as? UINavigationController
+                        navController?.popToRootViewController(animated: true)
+//                        UserDefaults.standard.set(self.emailTextFiled.text, forKey: "userEmail")
+//                        UserDefaults.standard.synchronize()
                         
                     } else {
                         //帳密錯誤
