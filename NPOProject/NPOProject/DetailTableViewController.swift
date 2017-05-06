@@ -19,6 +19,7 @@ class DetailTableViewController: UITableViewController {
     @IBOutlet weak var likeButtonOutlet: UIButton!
     
     @IBOutlet weak var projectButtonOutlet: UIButton!
+    
     var tempTitle = ""
     var tempText = ""
     var index = ""
@@ -53,28 +54,35 @@ class DetailTableViewController: UITableViewController {
         likeCount = UserDefaults.standard.integer(forKey: "likeCount")
         likeCountLabel.text = "\(likeCount)"
         
-        share()
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let messageArray = UserDefaults.standard.stringArray(forKey: "message") {
             messageCount = messageArray.count
             messageCountLabel.text = "\(messageCount)"
+            lookMessageButtonOutlet.setTitle("查看全部\(messageCount)則回覆", for: .normal)
         }
         navigationController?.hidesBarsOnSwipe = true
-        
+        share()
     }
+    
     func share() {
         //分享按鈕
         let shareButt = FBSDKShareButton()
-        shareButt.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 30, y: UIScreen.main.bounds.height / 2 + 80, width: 60, height: 30)
+        
+//        shareButt.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 30, y: UIScreen.main.bounds.height / 2 + 80, width: 60, height: 30)
+        shareButt.frame = CGRect(x: messageCountLabel.frame.maxX + 40, y: 0, width: 60, height: 30)
+        shareButt.center.y = messageCountLabel.center.y
 
-        view.addSubview(shareButt)
+//        view.addSubview(shareButt)
+        tableView.cellForRow(at: IndexPath(row: 1, section: 0))?.contentView.addSubview(shareButt)
         shareButt.setTitle("分享", for: .normal)
         
         //設定分享連結
         let content = FBSDKShareLinkContent()
-        content.contentURL = URL(string: "http://npost.tw/archives/23778")
+        content.contentURL = URL(string: "http://getlukcy.com/stories/2")
         shareButt.shareContent = content
     }
     
@@ -102,12 +110,14 @@ class DetailTableViewController: UITableViewController {
         UserDefaults.standard.synchronize()
     }
     
-    
+    //按下跳轉至專案頁面
     @IBAction func projectDonateButton(_ sender: UIButton) {
         let tabController = self.tabBarController
         tabController?.selectedIndex = 1
-        let navController = tabController?.selectedViewController as? UINavigationController
-        navController?.popToRootViewController(animated: true)
+        let navigation = tabController?.viewControllers?[1] as! UINavigationController
+        let storyboard = UIStoryboard.init(name: "Donate", bundle: nil)
+        let projectController = storyboard.instantiateViewController(withIdentifier: "ProjectTableViewController")
+        navigation.pushViewController(projectController, animated: false)
     }
     
     @IBAction func fbShareButton(_ sender: UIButton) {
@@ -117,7 +127,6 @@ class DetailTableViewController: UITableViewController {
     @IBAction func lookForDetailMessageButton(_ sender: UIButton) {
         lookMessageButtonOutlet.titleLabel?.text = "查看全部\(messageCount)則回覆"
         tableView.reloadData()
-        
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let presentController = storyboard.instantiateViewController(withIdentifier: "MessageViewController")
         self.present(presentController, animated: true, completion: nil)

@@ -11,12 +11,14 @@ import FBSDKShareKit
 
 class StoryTableViewController: UITableViewController {
     let stor = Story()
-    let lessonsArray = ["陽光商圈撿回收的75歲阿嬤",
+    let lessonsArray = ["台灣各個社區裡都有一個這樣的阿嬤",
                         "輪椅販賣者，楊姐姐",
                         "賣八寶粥的王太太",
                         "賣桑椹的82歲老奶奶",
                         "賣大誌雜誌的伯伯",
     ]
+    let subtitleArray = ["我們走在四平街陽光商圈中，手中還拿著剛喝完的咖啡罐，碰巧看到一位阿嬤在前方收拾回收品...","飄著雨的傍晚，楊姊姊獨自坐在捷運的出口販賣商品，她是曾被「好事地圖」報導過的輪椅街賣者...","賣八寶粥的王太太，清晨6點就開始備料，煮好一天販賣的量就要四個鐘頭，中午忙著配送公司訂單....","捷運站旁的陰影處，坐在一桶桑葚旁的奶奶正忙著用塑膠盒分裝桑葚，埋頭苦幹的同時四處張望著有沒有客人...","伯伯說，過去發生意外手腳斷過，所以無法正常工作，後來又罹患口腔癌，會發出非常惡臭的氣味..."]
+    
     let photoArray = ["0","1","2","3","4"]
     
     var video:[TKSotryVideo] = [
@@ -32,6 +34,9 @@ class StoryTableViewController: UITableViewController {
         //兩個都要設才能自動調整高度
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50
+        
+        //移除tableView分隔線
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
 
@@ -54,6 +59,7 @@ class StoryTableViewController: UITableViewController {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! StoryOneTableViewCell
             cell1.storyImageView.image = UIImage(named: "\(indexPath.row)")
             cell1.storyTitle.text = lessonsArray[indexPath.row]
+            cell1.storySubTitle.text = subtitleArray[indexPath.row]
             return cell1
         } else {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! StoryTwoTableViewCell

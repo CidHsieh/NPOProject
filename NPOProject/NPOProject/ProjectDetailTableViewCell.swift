@@ -15,6 +15,9 @@ class ProjectDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var projectTitle: UILabel!
     
     @IBOutlet weak var projectPreview: UILabel!
+    
+    @IBOutlet weak var progressImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

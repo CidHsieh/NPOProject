@@ -24,6 +24,11 @@ class ProjectTableViewController: UITableViewController {
         //兩個都要設才能自動調整高度
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50
+        
+        navigationController?.hidesBarsOnSwipe = true
+        
+        //移除tableView分隔線
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
 
 
@@ -56,6 +61,7 @@ class ProjectTableViewController: UITableViewController {
             cell.porjectImage.image = UIImage(named: "project\(indexPath.row)")
             cell.projectTitle.text = project.projectTitle[indexPath.row]
             cell.projectPreview.text = project.projaetPreview[indexPath.row]
+            cell.progressImage.image = UIImage(named: "progress")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! ProjectDonateTableViewCell
@@ -63,6 +69,13 @@ class ProjectTableViewController: UITableViewController {
             
         }
         
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let storyboard = UIStoryboard.init(name: "Donate", bundle: nil)
+            let pushViewController = storyboard.instantiateViewController(withIdentifier: "ProjectContentTableViewController") as! ProjectContentTableViewController
+            self.navigationController?.pushViewController(pushViewController, animated: true)
+        }
     }
     
     

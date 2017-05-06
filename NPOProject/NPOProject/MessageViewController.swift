@@ -89,7 +89,7 @@ class MessageViewController: UIViewController {
     }
     func keyboardHide(notification:Notification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            print(keyboardFrame.height)
+//            print(keyboardFrame.height
             toolbarBottonLayout.constant = 0
         }
     }
