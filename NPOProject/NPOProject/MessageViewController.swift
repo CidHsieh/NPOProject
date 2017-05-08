@@ -11,9 +11,14 @@ import UIKit
 
 class MessageViewController: UIViewController {
     
-    var message = ["我家附近也有這樣的阿嬤","年紀這麼大還要撿資源回收，好辛苦啊....","真的，應該讓他小孩看看這篇","已轉發，阿嬤加油！！","好好奇阿嬤每天工作幾小時？\n三餐都吃什麼Ｑ＿Ｑ"]
-    var nickname = ["Jack Lin","Cid","midchen","Vivian","Chris"]
-    var time = ["5分鐘前","1小時前","5小時前","10小時前","1天前"]
+    let timeCalculate = TimeCalculate()
+    
+
+    var nickName = ["Jack Lin","Cid","midchen","Vivian","Chris", "Lucaus","Jay","Min","Ember","Edward","Miguel"]
+    
+    var message = [String]()
+    var nickname = [String]()
+    var time = [String]()
     let messageView = UIView()
     let nickNameLabel = UILabel()
     let nickNameTextField = UITextField()
@@ -21,21 +26,23 @@ class MessageViewController: UIViewController {
     let messageTextView = UITextView()
     let sendMessageButton = UIButton(type: UIButtonType.custom) as UIButton
     
+    
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var toolbarTextField: UITextField!
     
     @IBAction func toolbarSendButton(_ sender: UIBarButtonItem) {
-        let now = getToday()
+        let randomNumber = Int(arc4random_uniform(11))
         if toolbarTextField.text != "" {
-            nickname.insert("Cid", at: 0)
+            nickname.insert(nickName[randomNumber], at: 0)
             message.insert(toolbarTextField.text!, at: 0)
-            time.insert("剛剛", at: 0)
+            //送出留言存入當下的時間
+            time.insert(timeCalculate.getToday(), at: 0)
         }
-        
-//        UserDefaults.standard.set(message, forKey: "message")
-//        UserDefaults.standard.set(time, forKey: "time")
-//        UserDefaults.standard.set(nickname, forKey: "nickname")
-//        UserDefaults.standard.synchronize()
+        UserDefaults.standard.set(nickname, forKey: "nickname")
+        UserDefaults.standard.set(message, forKey: "message")
+        UserDefaults.standard.set(time, forKey: "time")
+        UserDefaults.standard.synchronize()
+
         toolbarTextField.resignFirstResponder()
         toolbarTextField.text = ""
         tableView.reloadData()
@@ -89,18 +96,13 @@ class MessageViewController: UIViewController {
     }
     func keyboardHide(notification:Notification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            print(keyboardFrame.height
+            print(keyboardFrame.height)
             toolbarBottonLayout.constant = 0
         }
     }
     
     
-    func getToday(format:String = "yyyy/MM/dd HH:mm:ss") -> String {
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: now as Date)
-    }
+    
     
     
     @IBAction func backButtonDidPressed(_ sender: UIButton) {
@@ -149,7 +151,8 @@ extension MessageViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageTableViewCell
         cell.nickNameLabel.text = nickname[indexPath.row]
         cell.messageLable.text = message[indexPath.row]
-        cell.timeLable.text = time[indexPath.row]
+        //計算出過去留言距離現在的時間
+        cell.timeLable.text =  timeCalculate.compareDate(theDate: time[indexPath.row])
         UserDefaults.standard.set(nickname, forKey: "nickname")
         UserDefaults.standard.set(message, forKey: "message")
         UserDefaults.standard.set(time, forKey: "time")

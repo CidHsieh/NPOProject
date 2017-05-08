@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
         // create post request
         
         
-        let url = URL(string: "http://172.104.45.242/api/v1/login?" + "email=\(self.emailTextFiled.text!)&password=\(self.passwordTextField.text!)")
+        let url = URL(string: "http://getlukcy.com/api/v1/login?" + "email=\(self.emailTextFiled.text!)&password=\(self.passwordTextField.text!)")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
