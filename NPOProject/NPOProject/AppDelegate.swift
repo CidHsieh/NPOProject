@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.unselectedItemTintColor = UIColor.gray
         
         //進入LaunchScreen延遲
-        Thread.sleep(forTimeInterval: 7)
+        Thread.sleep(forTimeInterval: 0)
+        
+        FIRApp.configure()
         
         return true
     }

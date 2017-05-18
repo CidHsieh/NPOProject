@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -49,53 +50,26 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonDidPressed(_ sender: UIButton) {
-//        let jsonString = "email=\(emailTextFiled.text!)&password=\(passwordTextField.text!)"
-        // create post request
-        
-        
-        let url = URL(string: "http://getlukcy.com/api/v1/login?" + "email=\(self.emailTextFiled.text!)&password=\(self.passwordTextField.text!)")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        
-        
-        // insert json data to the request
-//        request.httpBody = jsonString.data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            
-            if let result = String(data: data, encoding: .utf8) {
-                let token = result
-                
-                //登入後要執行的動作要在主執行緒執行
-                DispatchQueue.main.async {
-                    if token.contains("email or password is not correct") != true {
-                        
-                        //帳密無誤，登入後跳轉畫面至故事牆
-                        let tabController = self.tabBarController
-                        tabController?.selectedIndex = 0
-                        let navController = tabController?.selectedViewController as? UINavigationController
-                        navController?.popToRootViewController(animated: true)
-//                        UserDefaults.standard.set(self.emailTextFiled.text, forKey: "userEmail")
-//                        UserDefaults.standard.synchronize()
-                        
-                    } else {
-                        //帳密錯誤
-                        let alertAction = UIAlertController(title: "帳號/密碼 輸入錯誤", message: "您輸入帳號或密碼不正確，請再輸入一次", preferredStyle: .alert)
-                        alertAction.addAction(UIAlertAction(title: "好", style: .default, handler: nil))
-                            self.present(alertAction, animated: true, completion: nil)
-                        print("帳密錯誤")
-                    }
-                    print(token)
-                }
-            }
+        guard let email = emailTextFiled.text, let password = passwordTextField.text else {
+            print("Form is not vaild")
+            return
         }
-        task.resume()
-        
-        print("\(self.emailTextFiled.text!), \(self.passwordTextField.text!)")
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+            if error != nil {
+                print(error!.localizedDescription)
+                let alertAction = UIAlertController(title: "錯誤", message: "帳號或密碼錯誤", preferredStyle: .alert)
+                alertAction.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                self.present(alertAction, animated: true, completion: nil)
+                return
+            } else {
+                //帳密無誤，登入後跳轉畫面至故事牆
+                let tabController = self.tabBarController
+                tabController?.selectedIndex = 0
+                let navController = tabController?.selectedViewController as? UINavigationController
+                navController?.popToRootViewController(animated: true)
+                print("登入成功")
+            }
+        })
     }
     
     //用臉書帳號登入
@@ -113,6 +87,17 @@ class LoginViewController: UIViewController {
                 }
                 if let tokenString = token.tokenString {
                     print(tokenString)
+                    
+                    //用臉書登入firebase
+                    let credentail = FIRFacebookAuthProvider.credential(withAccessToken: tokenString)
+                    FIRAuth.auth()?.signIn(with: credentail, completion: { (user: FIRUser?, error: Error?) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                            return
+                        } else {
+                            print("成功用臉書登入")
+                        }
+                    })
                 }
                 print("**************Login ok******************")
                 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SigninViewController: UIViewController {
     
@@ -42,8 +44,32 @@ class SigninViewController: UIViewController {
         //handle dismiss of keyboard here
         self.view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
     }
-    
+    //按下註冊按鈕
     @IBAction func singinButtonDidPressed(_ sender: UIButton) {
+        if passwordTextField.text == confirmPassword.text {
+            guard let email = emailTextField.text, let password = passwordTextField.text else {
+                print("Form is not vaild")
+                return
+            }
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    let alertAction = UIAlertController(title: "Error!", message: error!.localizedDescription, preferredStyle: .alert)
+                    alertAction.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    self.present(alertAction, animated: true, completion: nil)
+                    return
+                } else {
+                    print("順利新增使用者")
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+
+        } else {
+            let alertAction = UIAlertController(title: "錯誤", message: "請再次確認密碼", preferredStyle: .alert)
+            alertAction.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alertAction, animated: true, completion: nil)
+            return
+        }
         
     }
     func tap(gesture: UITapGestureRecognizer) {

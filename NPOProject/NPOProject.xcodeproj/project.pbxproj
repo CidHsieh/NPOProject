@@ -63,6 +63,7 @@
 		840AE8BF1EBD933A00F3E51A /* ProjectContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentTableViewController.swift; sourceTree = "<group>"; };
 		840AE8C11EBEFCB300F3E51A /* TimeCaculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCaculate.swift; sourceTree = "<group>"; };
 		842180DD1ECE110600969990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		842180DF1ECE12C200969990 /* NPOProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NPOProject.entitlements; sourceTree = "<group>"; };
 		846FC6D11EB70E94008C5C91 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
 		846FC6D51EB72192008C5C91 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		846FC6D71EB721F2008C5C91 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		847E15DA1EB045520028C6C5 /* NPOProject */ = {
 			isa = PBXGroup;
 			children = (
+				842180DF1ECE12C200969990 /* NPOProject.entitlements */,
 				847E15DB1EB045520028C6C5 /* AppDelegate.swift */,
 				847E15F31EB046CF0028C6C5 /* Main */,
 				846FC6DF1EB84593008C5C91 /* Donate */,
@@ -264,6 +266,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8H7X36TF25;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -511,6 +518,7 @@
 			baseConfigurationReference = 85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NPOProject/NPOProject.entitlements;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = NPOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,6 +533,7 @@
 			baseConfigurationReference = 0F357E38559EC85239B7CCE0 /* Pods-NPOProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NPOProject/NPOProject.entitlements;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = NPOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
