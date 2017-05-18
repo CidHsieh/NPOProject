@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,22 +22,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-xe-CJt">
-                                <rect key="frame" x="39.5" y="185.5" width="296" height="296"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我們挖掘台灣每個不起眼的小角落" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgp-Hb-9uP">
+                                <rect key="frame" x="49" y="270" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="讓你知道他們的故事" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9v-9h-Ew5">
+                                <rect key="frame" x="114" y="299" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="螢幕快照 2017-05-09 上午12.08.07" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-xe-CJt">
+                                <rect key="frame" x="0.0" y="63" width="375" height="332"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uCm-xe-CJt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="327:414" id="LA7-f9-TUM"/>
-                            <constraint firstItem="uCm-xe-CJt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gH5-39-9Up"/>
-                            <constraint firstItem="uCm-xe-CJt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="327:736" id="pHx-wk-oJ1"/>
-                            <constraint firstItem="uCm-xe-CJt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xsA-Ne-XDr"/>
+                            <constraint firstItem="Tgp-Hb-9uP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="33" id="A4b-eP-UYz"/>
+                            <constraint firstAttribute="trailing" secondItem="uCm-xe-CJt" secondAttribute="trailing" id="S1y-JI-vKa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tgp-Hb-9uP" secondAttribute="trailing" constant="24" id="VrA-Pg-g4j"/>
+                            <constraint firstItem="uCm-xe-CJt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Zh2-f1-gCH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="uCm-xe-CJt" secondAttribute="bottom" constant="272" id="Zsb-9x-lbf"/>
+                            <constraint firstItem="uCm-xe-CJt" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="43" id="Zyh-fM-jQk"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Tgp-Hb-9uP" secondAttribute="bottom" constant="376" id="b0S-W0-2Tl"/>
+                            <constraint firstItem="z9v-9h-Ew5" firstAttribute="centerX" secondItem="Tgp-Hb-9uP" secondAttribute="centerX" id="bCA-DY-FoT"/>
+                            <constraint firstItem="Tgp-Hb-9uP" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="250" id="xj7-0R-6KA"/>
+                            <constraint firstItem="z9v-9h-Ew5" firstAttribute="top" secondItem="Tgp-Hb-9uP" secondAttribute="bottom" constant="8" symbolic="YES" id="yrv-bm-7dX"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
+            <point key="canvasLocation" x="50.399999999999999" y="373.76311844077964"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="螢幕快照 2017-05-09 上午12.08.07" width="648" height="102"/>
+    </resources>
 </document>

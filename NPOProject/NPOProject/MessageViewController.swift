@@ -38,10 +38,10 @@ class MessageViewController: UIViewController {
             //送出留言存入當下的時間
             time.insert(timeCalculate.getToday(), at: 0)
         }
-        UserDefaults.standard.set(nickname, forKey: "nickname")
-        UserDefaults.standard.set(message, forKey: "message")
-        UserDefaults.standard.set(time, forKey: "time")
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.set(nickname, forKey: "nickname")
+//        UserDefaults.standard.set(message, forKey: "message")
+//        UserDefaults.standard.set(time, forKey: "time")
+//        UserDefaults.standard.synchronize()
 
         toolbarTextField.resignFirstResponder()
         toolbarTextField.text = ""
@@ -138,6 +138,10 @@ extension MessageViewController: UITableViewDelegate {
                 self.message.remove(at: indexPath.row)
                 self.time.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                UserDefaults.standard.set(self.nickname, forKey: "nickname")
+                UserDefaults.standard.set(self.message, forKey: "message")
+                UserDefaults.standard.set(self.time, forKey: "time")
+                UserDefaults.standard.synchronize()
             }
         }))
         self.present(alertAction, animated: true, completion: nil)

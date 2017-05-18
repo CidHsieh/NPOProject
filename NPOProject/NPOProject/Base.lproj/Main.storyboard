@@ -203,7 +203,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSe-KA-AWZ">
                                                     <rect key="frame" x="8" y="93.5" width="359" height="15"/>
-                                                    <state key="normal" title="查看全部6則回覆">
+                                                    <state key="normal">
                                                         <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -619,7 +619,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0" width="1920" height="1440"/>
+        <image name="0" width="600" height="600"/>
         <image name="Double Down_000000_50" width="50" height="50"/>
         <image name="Speech Bubble_000000_100" width="100" height="100"/>
         <image name="User Groups_000000_25" width="25" height="25"/>

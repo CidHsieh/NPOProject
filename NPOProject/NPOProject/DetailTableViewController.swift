@@ -66,6 +66,7 @@ class DetailTableViewController: UITableViewController {
         }
         navigationController?.hidesBarsOnSwipe = true
         share()
+        lookMessageButtonOutlet.titleLabel?.text = "查看全部\(messageCount)則回覆"
     }
     
     func share() {

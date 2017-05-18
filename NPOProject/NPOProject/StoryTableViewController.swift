@@ -39,6 +39,8 @@ class StoryTableViewController: UITableViewController {
         
         //移除tableView分隔線
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        //捲動隱藏NevigationBar
+        navigationController?.hidesBarsOnSwipe = true
     }
     
 

@@ -24,16 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let barFont = UIFont(name: "Avenir-Light", size: 24) {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: barFont]
         }
-//        //帳密無誤，登入後跳轉畫面至故事牆
-//        let tabController = self.window?.rootViewController as! UITabBarController
-//        tabController.selectedIndex = 2
-//        let navController = tabController.selectedViewController as? UINavigationController
-//        navController?.popToRootViewController(animated: false)
-//        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
-//        let blueController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-//        navController?.pushViewController(blueController, animated: false)
+
         
-       
         
         //將statusbar顏色改為白色
         UINavigationBar.appearance().barStyle = .blackOpaque
@@ -43,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.tintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
         tabBarController.tabBar.unselectedItemTintColor = UIColor.gray
         
-        
+        //進入LaunchScreen延遲
+        Thread.sleep(forTimeInterval: 7)
         
         return true
     }

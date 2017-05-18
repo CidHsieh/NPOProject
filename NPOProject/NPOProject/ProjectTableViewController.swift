@@ -13,6 +13,7 @@ class ProjectTableViewController: UITableViewController {
     let reviewTitle = "前情提要"
     let reviewContent = "我們從故事牆的回收阿嬤故事發現，在台灣有一群辛苦收集回收物的阿公阿嬤，散落在各個社區角落，因年老無法從事其他技術或消耗體力工作，因此選擇無技術、較無體力需求的撿拾回收工作，換取微薄收入。我們希望能透過一些方法，同時減輕這群人的負擔，希望在未來的日子裡，能輔導他們用這樣的方式，花費較少的時間、體力，達到相同的效果($)，減輕身體疲憊負擔"
     let project = Project()
+    let progressImageArray = ["progress0","progress1"]
     
 
     override func viewDidLoad() {
@@ -61,7 +62,7 @@ class ProjectTableViewController: UITableViewController {
             cell.porjectImage.image = UIImage(named: "project\(indexPath.row)")
             cell.projectTitle.text = project.projectTitle[indexPath.row]
             cell.projectPreview.text = project.projaetPreview[indexPath.row]
-            cell.progressImage.image = UIImage(named: "progress")
+            cell.progressImage.image = UIImage(named: "\(progressImageArray[indexPath.row])")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! ProjectDonateTableViewCell
