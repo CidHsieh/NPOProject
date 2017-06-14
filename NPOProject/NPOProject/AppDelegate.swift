@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //進入LaunchScreen延遲
         Thread.sleep(forTimeInterval: 0)
         
-        FIRApp.configure()
+        FirebaseApp.configure()
         
         return true
     }

@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
             print("Form is not vaild")
             return
         }
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user: User?, error: Error?) in
             if error != nil {
                 print(error!.localizedDescription)
                 let alertAction = UIAlertController(title: "錯誤", message: "帳號或密碼錯誤", preferredStyle: .alert)
@@ -89,8 +89,8 @@ class LoginViewController: UIViewController {
                     print(tokenString)
                     
                     //用臉書登入firebase
-                    let credentail = FIRFacebookAuthProvider.credential(withAccessToken: tokenString)
-                    FIRAuth.auth()?.signIn(with: credentail, completion: { (user: FIRUser?, error: Error?) in
+                    let credentail = FacebookAuthProvider.credential(withAccessToken: tokenString)
+                    Auth.auth().signIn(with: credentail, completion: { (user: User?, error: Error?) in
                         if error != nil {
                             print(error!.localizedDescription)
                             return

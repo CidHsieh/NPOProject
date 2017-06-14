@@ -51,7 +51,7 @@ class SigninViewController: UIViewController {
                 print("Form is not vaild")
                 return
             }
-            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error: Error?) in
                 if error != nil {
                     print(error!.localizedDescription)
                     let alertAction = UIAlertController(title: "Error!", message: error!.localizedDescription, preferredStyle: .alert)

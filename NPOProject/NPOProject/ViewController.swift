@@ -7,25 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let stor = Story()
+    var allStory:Array = [Dictionary<String,Any>]()
+    var storyModel = [Storys]()
+    
     
     let kDemoCell = "primerCell"
     let kCellSizeCoef: CGFloat = 0.7
     let kFirstItemTransform: CGFloat = 0.09
     
-    let lessonsArray = ["輪椅販賣者，楊姐姐",
-                        "賣八寶粥的王太太",
-                        "賣桑椹的82歲老奶奶",
-                        "陽光商圈撿回收的75歲阿嬤",
-                        "賣大誌雜誌的伯伯",
-                        "台客劇場"
-                        ]
-    let photoArray = ["0","1","2","3","4","5"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,24 +27,74 @@ class ViewController: UIViewController {
         stickeyLayout.firstItemTransform = kFirstItemTransform
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
-        navigationItem.title = ""
+        navigationItem.title = "故事牆"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let ref = Database.database().reference()
+        ref.child("newStory").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let newStory = snapshot.value as? [Dictionary<String,Any>] {
+                self.allStory = newStory
+                
+                for i in 0...self.allStory.count-1 {
+                    var tempLat = 0.0
+                    var tempLon = 0.0
+                    var tempDes = ""
+                    var tempTitle = ""
+                    var tempUser = ""
+                    var tempUrl = ""
+                    let tempArray = self.allStory[i]
+                    
+                    if let lat = tempArray["latitude"] as? Double {
+                        tempLat = lat
+                    }
+                    if let lon = tempArray["longitude"] as? Double {
+                        tempLon = lon
+                    }
+                    if let des = tempArray["description"] as? String {
+                        tempDes = des
+                    }
+                    if let title = tempArray["title"] as? String {
+                        tempTitle = title
+                    }
+                    if let user = tempArray["user"] as? String {
+                        tempUser = user
+                    }
+                    if let url = tempArray["url"] as? String {
+                        tempUrl = url
+                    }
+                    let tempStoryModel = Storys(latitude: tempLat, longitude: tempLon, description: tempDes, title: tempTitle, user: tempUser, url: tempUrl)
+                    self.storyModel.append(tempStoryModel)
+                    print(self.storyModel)
+                    self.collectionView.reloadData()
+                }
+            }
+        })
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        storyModel.removeAll()
     }
 }
+
 
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoArray.count
+        return storyModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kDemoCell, for: indexPath) as! PrimerCell
-        let lesson = lessonsArray[indexPath.row]
-        let image = photoArray[indexPath.row]
+        //把下載網址變成 URL，用 URL 去呼叫 loadImageWithURL 的方法
+        if let imageURL = URL(string: storyModel[indexPath.row].url) {
+            let download = ImageDownLoad()
+            download.loadImageWithURL(url: imageURL, myImageView: cell.imageView)
+        }
+        let lesson = storyModel[indexPath.row].title
         cell.Lesson = lesson
-        cell.Image = image
         return cell
     }
 }
@@ -71,20 +115,15 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row == photoArray.count-1 {
-            let storyboard = UIStoryboard.init(name: "Video", bundle: nil)
-            let pushViewController = storyboard.instantiateViewController(withIdentifier: "VideoTableViewController") as! VideoTableViewController
-            self.present(pushViewController, animated: true, completion: nil)
-        } else {
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
-            pushViewController.tempTitle = "\(lessonsArray[indexPath.row])"
-            
-            pushViewController.index = "\(indexPath.row)"
-            
-            pushViewController.tempText = stor.story[indexPath.row]
-            self.navigationController?.pushViewController(pushViewController, animated: true)
-        }
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let pushViewController = storyboard.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+        pushViewController.tempTitle = "\(storyModel[indexPath.row].title)"
+        
+        pushViewController.url = storyModel[indexPath.row].url
+        
+        pushViewController.tempText = storyModel[indexPath.row].description
+        self.navigationController?.pushViewController(pushViewController, animated: true)
+                
     }
     
 }

@@ -22,7 +22,7 @@ class DetailTableViewController: UITableViewController {
     
     var tempTitle = ""
     var tempText = ""
-    var index = ""
+    var url = ""
     var likeCount = 0
     let shareButt = FBSDKShareButton()
     var messageCount = 0
@@ -32,8 +32,14 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //把下載網址變成 URL，用 URL 去呼叫 loadImageWithURL 的方法
+        if let imageURL = URL(string: url) {
+            let download = ImageDownLoad()
+            download.loadImageWithURL(url: imageURL, myImageView: imageView)
+        }
+        
         descriptionLabel.text = tempText
-        imageView.image = UIImage(named: "\(index)")
+//        imageView.image = UIImage(named: "\(index)")
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
         
@@ -73,11 +79,10 @@ class DetailTableViewController: UITableViewController {
         //分享按鈕
         let shareButt = FBSDKShareButton()
         
-//        shareButt.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 30, y: UIScreen.main.bounds.height / 2 + 80, width: 60, height: 30)
+
         shareButt.frame = CGRect(x: messageCountLabel.frame.maxX + 40, y: 0, width: 60, height: 30)
         shareButt.center.y = messageCountLabel.center.y
 
-//        view.addSubview(shareButt)
         tableView.cellForRow(at: IndexPath(row: 1, section: 0))?.contentView.addSubview(shareButt)
         shareButt.setTitle("分享", for: .normal)
         

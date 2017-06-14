@@ -18,10 +18,5 @@ class PrimerCell: UICollectionViewCell {
             lessonLabel.text = Lesson
         }
     }
-    var Image: String? {
-        didSet {
-            imageView.image = UIImage(named: Image!)
-        }
-    }
     
 }

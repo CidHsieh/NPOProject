@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xuD-ke-9zW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xuD-ke-9zW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-1q-Ubq">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="760"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="7wc-XC-8Ev" customClass="StickyCollectionViewFlowLayout" customModule="NPOProject" customModuleProvider="target"/>
                                 <cells>
@@ -435,7 +435,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="09Q-sV-A0M" kind="relationship" relationship="rootViewController" id="SUg-Dk-DUw"/>
+                        <segue destination="NdR-ie-7AM" kind="relationship" relationship="rootViewController" id="L60-Sb-e6d"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gc2-MJ-a1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,11 +452,11 @@
             </objects>
             <point key="canvasLocation" x="1132" y="468"/>
         </scene>
-        <!--Video-->
+        <!--UpLoad-->
         <scene sceneID="aUN-be-aBm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Video" referencedIdentifier="Video" id="YiL-sD-5iQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="YouTube" image="YouTube 2_000000_25" selectedImage="YouTube 2_000000_25" id="nY9-9e-1fs"/>
+                <viewControllerPlaceholder storyboardName="UpLoad" referencedIdentifier="UpLoad" id="YiL-sD-5iQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新增" image="Marker_000000_100" selectedImage="Marker_000000_100" id="nY9-9e-1fs"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOn-sI-Y4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,6 +611,7 @@
                         <segue destination="y8S-zX-C6G" kind="relationship" relationship="viewControllers" id="xEp-Fd-FsS"/>
                         <segue destination="0gE-NP-tdL" kind="relationship" relationship="viewControllers" id="7YS-n2-bPB"/>
                         <segue destination="Hqa-wI-aLa" kind="relationship" relationship="viewControllers" id="Roq-P8-ca9"/>
+                        <segue destination="YiL-sD-5iQ" kind="relationship" relationship="viewControllers" id="j3O-cW-mWB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvR-zO-KbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,9 +622,9 @@
     <resources>
         <image name="0" width="600" height="600"/>
         <image name="Double Down_000000_50" width="50" height="50"/>
+        <image name="Marker_000000_100" width="16" height="16"/>
         <image name="Speech Bubble_000000_100" width="100" height="100"/>
         <image name="User Groups_000000_25" width="25" height="25"/>
-        <image name="YouTube 2_000000_25" width="25" height="25"/>
         <image name="unlike-1" width="100" height="100"/>
         <image name="專案0" width="27" height="18"/>
         <image name="我的1" width="16" height="18"/>
