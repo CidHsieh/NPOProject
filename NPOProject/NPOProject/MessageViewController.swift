@@ -7,19 +7,24 @@
 //
 
 import UIKit
-
+import Firebase
 
 class MessageViewController: UIViewController {
     
     let timeCalculate = TimeCalculate()
     
-
-    var nickName = ["Jack Lin","Cid","midchen","Vivian","Chris", "Lucaus","Jay","Min","Ember","Edward","Miguel"]
+    var messageArray = [[String]]()
     
-    var message = [String]()
-    var nickname = [String]()
-    var time = [String]()
-    let messageView = UIView()
+    let ref = Database.database().reference()
+    
+    var allStory:Array = [Dictionary<String,Any>]()
+    var index = 0
+    var story = Dictionary<String,Any>()
+    var userNickmane = ""
+    var userImageUrl = ""
+    var newMessage = [String]()
+    
+    
     let nickNameLabel = UILabel()
     let nickNameTextField = UITextField()
     let messageLabel = UILabel()
@@ -31,23 +36,40 @@ class MessageViewController: UIViewController {
     @IBOutlet weak var toolbarTextField: UITextField!
     
     @IBAction func toolbarSendButton(_ sender: UIBarButtonItem) {
-        let randomNumber = Int(arc4random_uniform(11))
-        if toolbarTextField.text != "" {
-            nickname.insert(nickName[randomNumber], at: 0)
-            message.insert(toolbarTextField.text!, at: 0)
-            //送出留言存入當下的時間
-            time.insert(timeCalculate.getToday(), at: 0)
-        }
-//        UserDefaults.standard.set(nickname, forKey: "nickname")
-//        UserDefaults.standard.set(message, forKey: "message")
-//        UserDefaults.standard.set(time, forKey: "time")
-//        UserDefaults.standard.synchronize()
+        //先確認是否已登入
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+            if toolbarTextField.text != "" {
+                //將留言資訊存入messageArray
+                
+                newMessage.append(userNickmane)
+                newMessage.append(toolbarTextField.text!)
+                newMessage.append(timeCalculate.getToday())
+                newMessage.append(userImageUrl)
+                
+                messageArray.insert(newMessage, at: 0)
+            }
+            story.updateValue(messageArray, forKey: "message")
+            allStory[index] = story
+            let ref = Database.database().reference()
+            ref.child("newStory").setValue(self.allStory, withCompletionBlock: { (error, ref) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    print("留言成功")
+                }
+            })
 
-        toolbarTextField.resignFirstResponder()
-        toolbarTextField.text = ""
-        tableView.reloadData()
+            toolbarTextField.resignFirstResponder()
+            toolbarTextField.text = ""
+            tableView.reloadData()
+        } else {
+            let alertaction = UIAlertController(title: "請先登入", message: "", preferredStyle: .alert)
+            alertaction.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+            self.present(alertaction, animated: true, completion: nil)
+        }
         
     }
+    
     @IBOutlet weak var toolbarBottonLayout: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
@@ -55,6 +77,34 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        ref.child("newStory").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let newStory = snapshot.value as? [Dictionary<String,Any>] {
+                self.allStory = newStory
+//                print(self.allStory[self.index])
+                self.story = self.allStory[self.index]
+                print(self.story)
+                if let tempMessageArray = self.story["message"] as? [[String]] {
+                    self.messageArray = tempMessageArray
+                    print(self.messageArray)
+                    self.tableView.reloadData()
+                }
+            }
+        })
+        
+        //取得使用者暱稱
+        ref.child("userinformation/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userInformation = snapshot.value as? Dictionary<String, Any> {
+                print(userInformation)
+                if let tmpeNickNmae = userInformation["nickName"] as? String {
+                    self.userNickmane = tmpeNickNmae
+                }
+                if let tempImageUrl = userInformation["userImageUrl"] as? String {
+                    self.userImageUrl = tempImageUrl
+                }
+            }
+        })
+        
         
         //點擊空白處退出鍵盤
         let touch = UITapGestureRecognizer(target: self, action: #selector(self.tap(gesture:)))
@@ -71,17 +121,10 @@ class MessageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         toolbarTextField.becomeFirstResponder()
     
-        if let loadNickName = UserDefaults.standard.stringArray(forKey: "nickname") {
-            nickname = loadNickName
-        }
-        if let loadmessage = UserDefaults.standard.stringArray(forKey: "message") {
-            message = loadmessage
-        }
-        if let loadTime = UserDefaults.standard.stringArray(forKey: "time") {
-            time = loadTime
-        }
+
     }
     
+ 
     //鍵盤出現時量測高度
     func keyboardShow(notification:Notification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -126,25 +169,7 @@ extension MessageViewController: UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return message.count
-    }
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let alertAction = UIAlertController(title: "確認刪除？", message: "", preferredStyle: .alert)
-        alertAction.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
-        alertAction.addAction(UIAlertAction(title: "刪除", style: .cancel, handler: { (UIAlertAction) in
-            if editingStyle == .delete {
-                // Delete the row from the data source
-                self.nickname.remove(at: indexPath.row)
-                self.message.remove(at: indexPath.row)
-                self.time.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                UserDefaults.standard.set(self.nickname, forKey: "nickname")
-                UserDefaults.standard.set(self.message, forKey: "message")
-                UserDefaults.standard.set(self.time, forKey: "time")
-                UserDefaults.standard.synchronize()
-            }
-        }))
-        self.present(alertAction, animated: true, completion: nil)
+        return messageArray.count
     }
 }
 
@@ -153,14 +178,17 @@ extension MessageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageTableViewCell
-        cell.nickNameLabel.text = nickname[indexPath.row]
-        cell.messageLable.text = message[indexPath.row]
+        cell.nickNameLabel.text = messageArray[indexPath.row][0]
+        cell.messageLable.text = messageArray[indexPath.row][1]
         //計算出過去留言距離現在的時間
-        cell.timeLable.text =  timeCalculate.compareDate(theDate: time[indexPath.row])
-        UserDefaults.standard.set(nickname, forKey: "nickname")
-        UserDefaults.standard.set(message, forKey: "message")
-        UserDefaults.standard.set(time, forKey: "time")
-        UserDefaults.standard.synchronize()
+        cell.timeLable.text =  timeCalculate.compareDate(theDate: messageArray[indexPath.row][2])
+        
+        //把下載網址變成 URL，用 URL 去呼叫 loadImageWithURL 的方法
+        if let imageURL = URL(string: messageArray[indexPath.row][3]) {
+            let download = ImageDownLoad()
+            download.loadImageWithURL(url: imageURL, myImageView: cell.userImage)
+        }
+
         return cell
     }
 }

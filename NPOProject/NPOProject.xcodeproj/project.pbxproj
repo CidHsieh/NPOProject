@@ -48,6 +48,7 @@
 		847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */; };
 		848ECFEA1EEFBF5B0040191D /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFE91EEFBF5B0040191D /* StoryModel.swift */; };
 		84FA06971EF0D6AD00E3A41F /* ImageDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */; };
+		84FA06991EF2900F00E3A41F /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA06981EF2900F00E3A41F /* MessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifViewController.swift; sourceTree = "<group>"; };
 		848ECFE91EEFBF5B0040191D /* StoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadTask.swift; sourceTree = "<group>"; };
+		84FA06981EF2900F00E3A41F /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOProject/Pods-NPOProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				840AE8C11EBEFCB300F3E51A /* TimeCaculate.swift */,
 				846FC6DD1EB82240008C5C91 /* Story.swift */,
 				848ECFE91EEFBF5B0040191D /* StoryModel.swift */,
+				84FA06981EF2900F00E3A41F /* MessageModel.swift */,
 				84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */,
 			);
 			name = Main;
@@ -376,6 +379,7 @@
 				840AE8BC1EBCB3A000F3E51A /* ProjectClassTableViewController.swift in Sources */,
 				842180E11ECE2EDA00969990 /* MyProfileViewController.swift in Sources */,
 				840AE8C01EBD933B00F3E51A /* ProjectContentTableViewController.swift in Sources */,
+				84FA06991EF2900F00E3A41F /* MessageModel.swift in Sources */,
 				842180EA1ECF8F9100969990 /* ImageSelect.swift in Sources */,
 				840AE8BA1EBCB06E00F3E51A /* ProjectDonateTableViewCell.swift in Sources */,
 				847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */,

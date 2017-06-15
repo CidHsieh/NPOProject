@@ -330,7 +330,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暱稱" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXV-oX-H6n">
-                                                    <rect key="frame" x="16" y="16" width="208" height="21"/>
+                                                    <rect key="frame" x="82" y="16" width="193" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dgR-QZ-koW"/>
                                                     </constraints>
@@ -339,31 +339,41 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="內容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJW-ww-E1z">
-                                                    <rect key="frame" x="16" y="45" width="351" height="29.5"/>
+                                                    <rect key="frame" x="82" y="45" width="285" height="29.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="時間" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRh-0m-vlU">
-                                                    <rect key="frame" x="174" y="16" width="201" height="21"/>
+                                                    <rect key="frame" x="275" y="16" width="100" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="201" id="Jqk-ji-U1d"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Jqk-ji-U1d"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-kf-Nml">
+                                                    <rect key="frame" x="16" y="16" width="58" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="58" id="NWd-af-fkq"/>
+                                                        <constraint firstAttribute="width" constant="58" id="ina-sN-zUX"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YRh-0m-vlU" firstAttribute="leading" secondItem="vXV-oX-H6n" secondAttribute="trailing" constant="-50" id="3M5-M0-N62"/>
+                                                <constraint firstItem="YRh-0m-vlU" firstAttribute="leading" secondItem="vXV-oX-H6n" secondAttribute="trailing" id="3M5-M0-N62"/>
+                                                <constraint firstItem="vJW-ww-E1z" firstAttribute="leading" secondItem="CH5-kf-Nml" secondAttribute="trailing" constant="8" id="3pE-nb-cAP"/>
                                                 <constraint firstItem="YRh-0m-vlU" firstAttribute="top" secondItem="yYd-Cx-Fqw" secondAttribute="topMargin" constant="8" id="6XV-Bk-kL4"/>
-                                                <constraint firstItem="vXV-oX-H6n" firstAttribute="leading" secondItem="yYd-Cx-Fqw" secondAttribute="leadingMargin" constant="8" id="7cm-L6-aSd"/>
                                                 <constraint firstItem="YRh-0m-vlU" firstAttribute="trailing" secondItem="yYd-Cx-Fqw" secondAttribute="trailingMargin" id="DWl-3T-sYH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vJW-ww-E1z" secondAttribute="trailing" constant="8" id="Dqz-Ro-hcw"/>
                                                 <constraint firstItem="vJW-ww-E1z" firstAttribute="top" secondItem="YRh-0m-vlU" secondAttribute="bottom" constant="8" id="GR4-Hx-R37"/>
-                                                <constraint firstItem="vJW-ww-E1z" firstAttribute="leading" secondItem="yYd-Cx-Fqw" secondAttribute="leadingMargin" constant="8" id="Hbq-0O-gfX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vJW-ww-E1z" secondAttribute="bottom" constant="8" id="Lvm-5E-Ajo"/>
+                                                <constraint firstItem="CH5-kf-Nml" firstAttribute="leading" secondItem="yYd-Cx-Fqw" secondAttribute="leadingMargin" constant="8" id="hAT-JH-GZt"/>
                                                 <constraint firstItem="YRh-0m-vlU" firstAttribute="height" secondItem="vXV-oX-H6n" secondAttribute="height" id="hcG-TN-rQF"/>
+                                                <constraint firstItem="vXV-oX-H6n" firstAttribute="leading" secondItem="CH5-kf-Nml" secondAttribute="trailing" constant="8" id="jGE-ZT-xp2"/>
+                                                <constraint firstItem="CH5-kf-Nml" firstAttribute="top" secondItem="yYd-Cx-Fqw" secondAttribute="topMargin" constant="8" id="lTb-d9-7U4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CH5-kf-Nml" secondAttribute="bottom" constant="8" id="lg1-HX-RsM"/>
                                                 <constraint firstItem="vXV-oX-H6n" firstAttribute="top" secondItem="yYd-Cx-Fqw" secondAttribute="topMargin" constant="8" id="tnQ-9g-opn"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -371,6 +381,7 @@
                                             <outlet property="messageLable" destination="vJW-ww-E1z" id="aa9-Qx-7Wt"/>
                                             <outlet property="nickNameLabel" destination="vXV-oX-H6n" id="a9h-Bg-SIA"/>
                                             <outlet property="timeLable" destination="YRh-0m-vlU" id="f7v-qi-7ZR"/>
+                                            <outlet property="userImage" destination="CH5-kf-Nml" id="lpy-fw-ain"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

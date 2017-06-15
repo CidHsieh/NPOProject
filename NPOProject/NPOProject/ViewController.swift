@@ -136,6 +136,8 @@ extension ViewController: UICollectionViewDelegate {
         pushViewController.url = storyModel[indexPath.row].url
         
         pushViewController.tempText = storyModel[indexPath.row].description
+        
+        pushViewController.index = indexPath.row
         self.navigationController?.pushViewController(pushViewController, animated: true)
                 
     }

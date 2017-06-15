@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKShareKit
+import Firebase
 
 class DetailTableViewController: UITableViewController {
     
@@ -23,10 +24,15 @@ class DetailTableViewController: UITableViewController {
     var tempTitle = ""
     var tempText = ""
     var url = ""
+    var index = 0
     var likeCount = 0
     let shareButt = FBSDKShareButton()
     var messageCount = 0
     var like = Bool()
+    
+    var allStory:Array = [Dictionary<String,Any>]()
+    var story = Dictionary<String,Any>()
+    var messageArray = [[String]]()
   
     
     override func viewDidLoad() {
@@ -61,18 +67,29 @@ class DetailTableViewController: UITableViewController {
         likeCountLabel.text = "\(likeCount)"
         
         
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let messageArray = UserDefaults.standard.stringArray(forKey: "message") {
-            messageCount = messageArray.count
-            messageCountLabel.text = "\(messageCount)"
-            lookMessageButtonOutlet.setTitle("查看全部\(messageCount)則回覆", for: .normal)
-        }
+        let ref = Database.database().reference()
+        ref.child("newStory").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let newStory = snapshot.value as? [Dictionary<String,Any>] {
+                self.allStory = newStory
+                //                print(self.allStory[self.index])
+                self.story = self.allStory[self.index]
+                print(self.story)
+                if let tempMessageArray = self.story["message"] as? [[String]] {
+                    self.messageArray = tempMessageArray
+                    print(self.messageArray)
+                    self.messageCount = self.messageArray.count
+                    self.messageCountLabel.text = "\(self.messageCount)"
+                    self.lookMessageButtonOutlet.setTitle("查看全部\(self.messageCount)則回覆", for: .normal)
+                    self.lookMessageButtonOutlet.titleLabel?.text = "查看全部\(self.messageCount)則回覆"
+                }
+            }
+        })
+    
         navigationController?.hidesBarsOnSwipe = true
         share()
-        lookMessageButtonOutlet.titleLabel?.text = "查看全部\(messageCount)則回覆"
     }
     
     func share() {
@@ -95,7 +112,8 @@ class DetailTableViewController: UITableViewController {
     
     @IBAction func messageButtonDidPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let presentController = storyboard.instantiateViewController(withIdentifier: "MessageViewController")
+        let presentController = storyboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
+        presentController.index = index
         self.present(presentController, animated: true, completion: nil)
     }
     
