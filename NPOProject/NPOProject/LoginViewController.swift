@@ -41,7 +41,16 @@ class LoginViewController: UIViewController {
     //鍵盤出現，view高度往上
     func keyBoardWillShow(notification: NSNotification) {
         //handle appearing of keyboard here
-        self.view.frame = CGRect(x: 0, y: -70, width: view.frame.width, height: view.frame.height)
+        if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            print(keyboardFrame.height)
+            if view.frame.height == 667 {
+                self.view.frame = CGRect(x: 0, y: -70, width: view.frame.width, height: view.frame.height)
+            } else if view.frame.height == 736 {
+                self.view.frame = CGRect(x: 0, y: -60, width: view.frame.width, height: view.frame.height)
+            }
+            
+        }
+        
     }
     //鍵盤退出，view高度往下
     func keyBoardWillHide(notification: NSNotification) {
@@ -68,6 +77,10 @@ class LoginViewController: UIViewController {
                 let navController = tabController?.selectedViewController as? UINavigationController
                 navController?.popToRootViewController(animated: true)
                 print("登入成功")
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.synchronize()
+                
+                
             }
         })
     }
@@ -96,6 +109,8 @@ class LoginViewController: UIViewController {
                             return
                         } else {
                             print("成功用臉書登入")
+                            UserDefaults.standard.set(true, forKey: "isLogin")
+                            UserDefaults.standard.synchronize()
                         }
                     })
                 }

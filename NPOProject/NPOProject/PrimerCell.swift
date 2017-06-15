@@ -13,9 +13,17 @@ class PrimerCell: UICollectionViewCell {
     @IBOutlet weak var lessonLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
     var Lesson: String? {
         didSet {
             lessonLabel.text = Lesson
+        }
+    }
+    var SubTitle: String? {
+        didSet {
+            subTitleLabel.text = SubTitle
         }
     }
     

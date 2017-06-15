@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,9 +37,22 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czn-v6-KS6">
                                                     <rect key="frame" x="8" y="488" width="591" height="53"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小標" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-Tu-GC6">
+                                                            <rect key="frame" x="52.5" y="16" width="485.5" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="96K-tL-lkc"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="5yL-Tu-GC6" firstAttribute="centerX" secondItem="Czn-v6-KS6" secondAttribute="centerX" id="GVn-Hy-GC8"/>
                                                         <constraint firstAttribute="height" constant="53" id="N8j-x5-Q5T"/>
+                                                        <constraint firstItem="5yL-Tu-GC6" firstAttribute="centerY" secondItem="Czn-v6-KS6" secondAttribute="centerY" id="rbS-Pm-sMO"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r9d-gP-1p3">
@@ -73,6 +87,7 @@
                                             <constraint firstItem="cen-2z-B2d" firstAttribute="top" secondItem="rfK-03-1BR" secondAttribute="top" constant="8" id="8cr-YM-B25"/>
                                             <constraint firstAttribute="bottom" secondItem="Czn-v6-KS6" secondAttribute="bottom" constant="8" id="E1N-ib-IXg"/>
                                             <constraint firstItem="cen-2z-B2d" firstAttribute="leading" secondItem="rfK-03-1BR" secondAttribute="leading" constant="8" id="HIG-Fg-cIl"/>
+                                            <constraint firstItem="5yL-Tu-GC6" firstAttribute="width" secondItem="rfK-03-1BR" secondAttribute="width" multiplier="0.8" id="IUp-8g-oZ4"/>
                                             <constraint firstItem="Czn-v6-KS6" firstAttribute="centerX" secondItem="rfK-03-1BR" secondAttribute="centerX" id="JWC-t7-BCX"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="r9d-gP-1p3" secondAttribute="trailing" id="T9c-r0-SKf"/>
                                             <constraint firstItem="r9d-gP-1p3" firstAttribute="top" secondItem="cen-2z-B2d" secondAttribute="bottom" constant="8" id="VB3-fM-Jxf"/>
@@ -84,6 +99,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="r9d-gP-1p3" id="gqR-Ky-TkM"/>
                                             <outlet property="lessonLabel" destination="gEX-pa-uM9" id="zt6-RW-1Kk"/>
+                                            <outlet property="subTitleLabel" destination="5yL-Tu-GC6" id="1Ay-rL-i8m"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

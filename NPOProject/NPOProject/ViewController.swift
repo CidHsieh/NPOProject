@@ -8,10 +8,14 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let activaty = NVActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2, width: 80, height: 80), type: NVActivityIndicatorType.ballSpinFadeLoader, color: .red)
+    
     var allStory:Array = [Dictionary<String,Any>]()
     var storyModel = [Storys]()
     
@@ -29,6 +33,11 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 250/255, green: 127/255, blue: 127/255, alpha: 1)
         navigationItem.title = "故事牆"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        
+        activaty.center = self.view.center
+        // 啟動 NVActivityIndicatorView 動畫
+        self.view.addSubview(activaty)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -68,10 +77,13 @@ class ViewController: UIViewController {
                     let tempStoryModel = Storys(latitude: tempLat, longitude: tempLon, description: tempDes, title: tempTitle, user: tempUser, url: tempUrl)
                     self.storyModel.append(tempStoryModel)
                     print(self.storyModel)
+                    self.activaty.stopAnimating()
                     self.collectionView.reloadData()
+                    
                 }
             }
         })
+        activaty.startAnimating()
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -95,6 +107,8 @@ extension ViewController: UICollectionViewDataSource {
         }
         let lesson = storyModel[indexPath.row].title
         cell.Lesson = lesson
+        let subTitle = storyModel[indexPath.row].description
+        cell.SubTitle = subTitle
         return cell
     }
 }
