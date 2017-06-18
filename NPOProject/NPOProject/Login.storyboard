@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m33-fI-dKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m33-fI-dKM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +15,7 @@
         <scene sceneID="Wt0-H5-I6M">
             <objects>
                 <navigationController storyboardIdentifier="Login" automaticallyAdjustsScrollViewInsets="NO" id="m33-fI-dKM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="我的1" selectedImage="我的1" id="mh7-BQ-DDZ"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="user" selectedImage="user" id="mh7-BQ-DDZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rhf-r7-urJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -88,11 +88,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odf-yh-ajF">
                                 <rect key="frame" x="231" y="459" width="67" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="69z-WN-b3i"/>
-                                    <constraint firstAttribute="height" constant="28" id="juQ-Jp-z2D"/>
+                                    <constraint firstAttribute="width" constant="67" id="U4y-e8-e8F"/>
+                                    <constraint firstAttribute="height" constant="28" id="uM1-8S-0Nt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="忘記密碼？"/>
+                                <state key="normal" title="會員資料"/>
                                 <connections>
                                     <segue destination="ukh-oe-s3b" kind="push" id="QGl-F4-RNh"/>
                                 </connections>
@@ -114,16 +114,16 @@
                             <constraint firstItem="vZT-ov-bIu" firstAttribute="height" secondItem="vuE-zo-bF5" secondAttribute="height" id="5mW-ec-iUD"/>
                             <constraint firstItem="vuE-zo-bF5" firstAttribute="centerX" secondItem="LqI-eM-ogd" secondAttribute="centerX" id="6eg-5X-MYq"/>
                             <constraint firstItem="eYG-2u-PpU" firstAttribute="centerX" secondItem="LqI-eM-ogd" secondAttribute="centerX" id="8aZ-xf-0sh"/>
-                            <constraint firstItem="odf-yh-ajF" firstAttribute="top" secondItem="eYG-2u-PpU" secondAttribute="bottom" constant="9" id="DWQ-qT-cE5"/>
                             <constraint firstItem="vZT-ov-bIu" firstAttribute="top" secondItem="vuE-zo-bF5" secondAttribute="bottom" constant="25" id="G41-1u-sXs"/>
                             <constraint firstItem="69C-3X-Mon" firstAttribute="centerX" secondItem="LqI-eM-ogd" secondAttribute="centerX" id="GnZ-Ud-u4B"/>
                             <constraint firstItem="eYG-2u-PpU" firstAttribute="height" secondItem="vZT-ov-bIu" secondAttribute="height" id="Mh8-YK-aNt"/>
                             <constraint firstItem="Cvq-bX-7hz" firstAttribute="width" secondItem="LqI-eM-ogd" secondAttribute="width" multiplier="190:414" id="Mx1-42-tqa"/>
-                            <constraint firstItem="odf-yh-ajF" firstAttribute="leading" secondItem="vx7-YZ-d2l" secondAttribute="trailing" constant="1" id="NSb-2D-Kn7"/>
                             <constraint firstItem="Cvq-bX-7hz" firstAttribute="top" secondItem="ZQj-b7-gSi" secondAttribute="bottom" constant="134" id="PI6-fb-7V6"/>
                             <constraint firstItem="vx7-YZ-d2l" firstAttribute="top" secondItem="eYG-2u-PpU" secondAttribute="bottom" constant="8" id="Rbq-Zk-iG4"/>
                             <constraint firstItem="Cvq-bX-7hz" firstAttribute="centerX" secondItem="LqI-eM-ogd" secondAttribute="centerX" id="U4u-y4-Jdv"/>
+                            <constraint firstItem="odf-yh-ajF" firstAttribute="centerY" secondItem="vx7-YZ-d2l" secondAttribute="centerY" id="WZi-Gy-RDc"/>
                             <constraint firstItem="vuE-zo-bF5" firstAttribute="height" secondItem="Cvq-bX-7hz" secondAttribute="height" id="awn-6u-xyg"/>
+                            <constraint firstItem="odf-yh-ajF" firstAttribute="leading" secondItem="vx7-YZ-d2l" secondAttribute="trailing" constant="1" id="bQw-4G-T44"/>
                             <constraint firstItem="vuE-zo-bF5" firstAttribute="top" secondItem="69C-3X-Mon" secondAttribute="bottom" constant="15" id="dpY-A6-okc"/>
                             <constraint firstItem="vuE-zo-bF5" firstAttribute="width" secondItem="Cvq-bX-7hz" secondAttribute="width" id="fym-o0-H72"/>
                             <constraint firstItem="Cvq-bX-7hz" firstAttribute="height" secondItem="LqI-eM-ogd" secondAttribute="height" multiplier="40:762" id="hkU-sr-Ikt"/>
@@ -356,7 +356,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="我的1" width="16" height="18"/>
+        <image name="user" width="33" height="33"/>
         <image name="螢幕快照 2017-04-25 下午9.20.02" width="708" height="128"/>
     </resources>
 </document>

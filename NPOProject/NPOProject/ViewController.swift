@@ -42,48 +42,60 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let ref = Database.database().reference()
-        ref.child("newStory").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let newStory = snapshot.value as? [Dictionary<String,Any>] {
-                self.allStory = newStory
-                
-                for i in 0...self.allStory.count-1 {
-                    var tempLat = 0.0
-                    var tempLon = 0.0
-                    var tempDes = ""
-                    var tempTitle = ""
-                    var tempUser = ""
-                    var tempUrl = ""
-                    let tempArray = self.allStory[i]
+        
+        let rechability = Reachability(hostName: "www.apple.com")
+        //測試連網狀態，是 enum，如果沒網路的 rawValue == 0
+        if rechability?.currentReachabilityStatus().rawValue == 0 {
+            //沒網路時，跳出 Alert Controller
+            let alertAction = UIAlertController(title: "Error", message: "please check network connection", preferredStyle: .alert)
+            alertAction.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alertAction, animated: true, completion: nil)
+            
+        } else {
+            let ref = Database.database().reference()
+            ref.child("newStory").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let newStory = snapshot.value as? [Dictionary<String,Any>] {
+                    self.allStory = newStory
                     
-                    if let lat = tempArray["latitude"] as? Double {
-                        tempLat = lat
+                    for i in 0...self.allStory.count-1 {
+                        var tempLat = 0.0
+                        var tempLon = 0.0
+                        var tempDes = ""
+                        var tempTitle = ""
+                        var tempUser = ""
+                        var tempUrl = ""
+                        let tempArray = self.allStory[i]
+                        
+                        if let lat = tempArray["latitude"] as? Double {
+                            tempLat = lat
+                        }
+                        if let lon = tempArray["longitude"] as? Double {
+                            tempLon = lon
+                        }
+                        if let des = tempArray["description"] as? String {
+                            tempDes = des
+                        }
+                        if let title = tempArray["title"] as? String {
+                            tempTitle = title
+                        }
+                        if let user = tempArray["user"] as? String {
+                            tempUser = user
+                        }
+                        if let url = tempArray["url"] as? String {
+                            tempUrl = url
+                        }
+                        let tempStoryModel = Storys(latitude: tempLat, longitude: tempLon, description: tempDes, title: tempTitle, user: tempUser, url: tempUrl)
+                        self.storyModel.append(tempStoryModel)
+                        print(self.storyModel)
+                        
+                        self.collectionView.reloadData()
+                        self.activaty.stopAnimating()
                     }
-                    if let lon = tempArray["longitude"] as? Double {
-                        tempLon = lon
-                    }
-                    if let des = tempArray["description"] as? String {
-                        tempDes = des
-                    }
-                    if let title = tempArray["title"] as? String {
-                        tempTitle = title
-                    }
-                    if let user = tempArray["user"] as? String {
-                        tempUser = user
-                    }
-                    if let url = tempArray["url"] as? String {
-                        tempUrl = url
-                    }
-                    let tempStoryModel = Storys(latitude: tempLat, longitude: tempLon, description: tempDes, title: tempTitle, user: tempUser, url: tempUrl)
-                    self.storyModel.append(tempStoryModel)
-                    print(self.storyModel)
-                    self.activaty.stopAnimating()
-                    self.collectionView.reloadData()
-                    
                 }
-            }
-        })
-        activaty.startAnimating()
+            })
+            activaty.startAnimating()
+        }
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -100,6 +112,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kDemoCell, for: indexPath) as! PrimerCell
+        
         //把下載網址變成 URL，用 URL 去呼叫 loadImageWithURL 的方法
         if let imageURL = URL(string: storyModel[indexPath.row].url) {
             let download = ImageDownLoad()
@@ -138,6 +151,13 @@ extension ViewController: UICollectionViewDelegate {
         pushViewController.tempText = storyModel[indexPath.row].description
         
         pushViewController.index = indexPath.row
+        
+        pushViewController.lat = storyModel[indexPath.row].latitude
+        
+        pushViewController.lon = storyModel[indexPath.row].longitude
+        
+        pushViewController.placeTitle = storyModel[indexPath.row].title
+        
         self.navigationController?.pushViewController(pushViewController, animated: true)
                 
     }

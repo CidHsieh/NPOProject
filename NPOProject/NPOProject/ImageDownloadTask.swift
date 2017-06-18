@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 
 class ImageDownLoad {
-    var loading:UIActivityIndicatorView?
     
     func loadImageWithURL(url:URL, myImageView: UIImageView){ //用這個方法給一個網址，就去下載圖片
         let session = URLSession(configuration: .default) //生出一個 URLSession
@@ -35,9 +34,6 @@ class ImageDownLoad {
             (data,response, error) in
             //下載完之後會執行的 closure
             
-            DispatchQueue.main.async {
-                self.loading?.stopAnimating()
-            }
             
             if error != nil { // 如果有錯誤，就不要再執行
                 return
@@ -59,9 +55,11 @@ class ImageDownLoad {
             }
         })
         
-        loading?.startAnimating()
+        
         //開始下載
         task.resume()
+        
+        
     }
     
 }

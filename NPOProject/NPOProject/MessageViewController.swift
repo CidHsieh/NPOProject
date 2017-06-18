@@ -63,7 +63,7 @@ class MessageViewController: UIViewController {
             toolbarTextField.text = ""
             tableView.reloadData()
         } else {
-            let alertaction = UIAlertController(title: "請先登入", message: "", preferredStyle: .alert)
+            let alertaction = UIAlertController(title: "登入後才可留言喔", message: "", preferredStyle: .alert)
             alertaction.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
             self.present(alertaction, animated: true, completion: nil)
         }

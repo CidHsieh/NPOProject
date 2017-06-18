@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKShareKit
 import Firebase
+import MapKit
 
 class DetailTableViewController: UITableViewController {
     
@@ -29,6 +30,9 @@ class DetailTableViewController: UITableViewController {
     let shareButt = FBSDKShareButton()
     var messageCount = 0
     var like = Bool()
+    var lat = 0.0
+    var lon = 0.0
+    var placeTitle = ""
     
     var allStory:Array = [Dictionary<String,Any>]()
     var story = Dictionary<String,Any>()
@@ -89,25 +93,35 @@ class DetailTableViewController: UITableViewController {
         })
     
         navigationController?.hidesBarsOnSwipe = true
-        share()
+//        share()
     }
     
-    func share() {
-        //分享按鈕
-        let shareButt = FBSDKShareButton()
-        
+//    func share() {
+//        //分享按鈕
+//        let shareButt = FBSDKShareButton()
+//        
+//
+//        shareButt.frame = CGRect(x: messageCountLabel.frame.maxX + 40, y: 0, width: 60, height: 30)
+//        shareButt.center.y = messageCountLabel.center.y
+//
+//        tableView.cellForRow(at: IndexPath(row: 1, section: 0))?.contentView.addSubview(shareButt)
+//        shareButt.setTitle("分享", for: .normal)
+//        
+//        //設定分享連結
+//        let content = FBSDKShareLinkContent()
+//        content.contentURL = URL(string: "http://getlukcy.com/stories/2")
+//    }
+    
+    @IBAction func shareButtonDidPressed(_ sender: UIButton) {
+            
+        let defaultText = self.tempText
 
-        shareButt.frame = CGRect(x: messageCountLabel.frame.maxX + 40, y: 0, width: 60, height: 30)
-        shareButt.center.y = messageCountLabel.center.y
-
-        tableView.cellForRow(at: IndexPath(row: 1, section: 0))?.contentView.addSubview(shareButt)
-        shareButt.setTitle("分享", for: .normal)
-        
-        //設定分享連結
-        let content = FBSDKShareLinkContent()
-        content.contentURL = URL(string: "http://getlukcy.com/stories/2")
-        shareButt.shareContent = content
+        if let imageToShare = imageView.image {
+            let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }        
     }
+    
     
     
     @IBAction func messageButtonDidPressed(_ sender: UIButton) {
@@ -165,4 +179,21 @@ class DetailTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func navigation(_ sender: UIButton) {
+        navigation(lat: lat, lon: lon, placeName: placeTitle)
+    }
+    func navigation(lat:Double, lon:Double, placeName:String){
+        let latitude: CLLocationDegrees = CLLocationDegrees(lat)
+        let longitude:CLLocationDegrees = CLLocationDegrees(lon)
+        
+        let regineDistance:CLLocationDistance = 1000.0
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let reginSpan = MKCoordinateRegionMakeWithDistance(coordinates, regineDistance, regineDistance)
+        
+        let option = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: reginSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: reginSpan.span)]
+        let placeMark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placeMark)
+        mapItem.name = placeName
+        mapItem.openInMaps(launchOptions: option)
+    }
 }

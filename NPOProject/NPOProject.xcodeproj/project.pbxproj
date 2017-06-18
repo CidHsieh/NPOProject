@@ -18,6 +18,7 @@
 		840AE8BC1EBCB3A000F3E51A /* ProjectClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE8BB1EBCB3A000F3E51A /* ProjectClassTableViewController.swift */; };
 		840AE8C01EBD933B00F3E51A /* ProjectContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE8BF1EBD933A00F3E51A /* ProjectContentTableViewController.swift */; };
 		840AE8C21EBEFCB300F3E51A /* TimeCaculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE8C11EBEFCB300F3E51A /* TimeCaculate.swift */; };
+		840F60E51EF39436002BF65B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F60E41EF39436002BF65B /* Reachability.m */; };
 		842180DE1ECE110600969990 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842180DD1ECE110600969990 /* GoogleService-Info.plist */; };
 		842180E11ECE2EDA00969990 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842180E01ECE2EDA00969990 /* MyProfileViewController.swift */; };
 		842180E41ECF6E6000969990 /* UpLodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842180E31ECF6E6000969990 /* UpLodeViewController.swift */; };
@@ -48,7 +49,6 @@
 		847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */; };
 		848ECFEA1EEFBF5B0040191D /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848ECFE91EEFBF5B0040191D /* StoryModel.swift */; };
 		84FA06971EF0D6AD00E3A41F /* ImageDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */; };
-		84FA06991EF2900F00E3A41F /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA06981EF2900F00E3A41F /* MessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +64,9 @@
 		840AE8BB1EBCB3A000F3E51A /* ProjectClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectClassTableViewController.swift; sourceTree = "<group>"; };
 		840AE8BF1EBD933A00F3E51A /* ProjectContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContentTableViewController.swift; sourceTree = "<group>"; };
 		840AE8C11EBEFCB300F3E51A /* TimeCaculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCaculate.swift; sourceTree = "<group>"; };
+		840F60E21EF39435002BF65B /* NPOProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NPOProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		840F60E31EF39436002BF65B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		840F60E41EF39436002BF65B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		842180DD1ECE110600969990 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		842180DF1ECE12C200969990 /* NPOProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NPOProject.entitlements; sourceTree = "<group>"; };
 		842180E01ECE2EDA00969990 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		847E15FF1EB04DBA0028C6C5 /* NotifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifViewController.swift; sourceTree = "<group>"; };
 		848ECFE91EEFBF5B0040191D /* StoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadTask.swift; sourceTree = "<group>"; };
-		84FA06981EF2900F00E3A41F /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPOProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPOProject/Pods-NPOProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,8 +203,10 @@
 				840AE8C11EBEFCB300F3E51A /* TimeCaculate.swift */,
 				846FC6DD1EB82240008C5C91 /* Story.swift */,
 				848ECFE91EEFBF5B0040191D /* StoryModel.swift */,
-				84FA06981EF2900F00E3A41F /* MessageModel.swift */,
 				84FA06961EF0D6AD00E3A41F /* ImageDownloadTask.swift */,
+				840F60E31EF39436002BF65B /* Reachability.h */,
+				840F60E41EF39436002BF65B /* Reachability.m */,
+				840F60E21EF39435002BF65B /* NPOProject-Bridging-Header.h */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -275,6 +279,7 @@
 					847E15D71EB045520028C6C5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8H7X36TF25;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -379,7 +384,6 @@
 				840AE8BC1EBCB3A000F3E51A /* ProjectClassTableViewController.swift in Sources */,
 				842180E11ECE2EDA00969990 /* MyProfileViewController.swift in Sources */,
 				840AE8C01EBD933B00F3E51A /* ProjectContentTableViewController.swift in Sources */,
-				84FA06991EF2900F00E3A41F /* MessageModel.swift in Sources */,
 				842180EA1ECF8F9100969990 /* ImageSelect.swift in Sources */,
 				840AE8BA1EBCB06E00F3E51A /* ProjectDonateTableViewCell.swift in Sources */,
 				847E15FC1EB04CAC0028C6C5 /* LoginViewController.swift in Sources */,
@@ -403,6 +407,7 @@
 				840AE8AA1EBAFFC300F3E51A /* MessageViewController.swift in Sources */,
 				840AE8C21EBEFCB300F3E51A /* TimeCaculate.swift in Sources */,
 				847E16001EB04DBA0028C6C5 /* NotifViewController.swift in Sources */,
+				840F60E51EF39436002BF65B /* Reachability.m in Sources */,
 				847E15F21EB0458B0028C6C5 /* PrimerCell.swift in Sources */,
 				846FC6EB1EB8591A008C5C91 /* AboutUsTableViewController.swift in Sources */,
 				846FC6EF1EB8620C008C5C91 /* About.swift in Sources */,
@@ -533,12 +538,15 @@
 			baseConfigurationReference = 85507CE63CAD7EE5BE037A70 /* Pods-NPOProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NPOProject/NPOProject.entitlements;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = NPOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CidHsieh.NPOProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NPOProject/NPOProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -548,12 +556,14 @@
 			baseConfigurationReference = 0F357E38559EC85239B7CCE0 /* Pods-NPOProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NPOProject/NPOProject.entitlements;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = NPOProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CidHsieh.NPOProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NPOProject/NPOProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
